@@ -37,15 +37,23 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .vcard:hover .pbtn{transform:scale(1.1);background:rgba(245,240,232,.18);border-color:rgba(245,240,232,.55);}
 .pico{width:0;height:0;border-style:solid;border-width:8px 0 8px 15px;border-color:transparent transparent transparent #f5f0e8;margin-left:4px;}
 .vlbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,169,138,.7);font-weight:300;}
-.rdrsec{border-top:1px solid #e0d9ce;background:#f5f0e8;}
-.rdrtog{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:transparent;border:none;cursor:pointer;transition:background .2s;}
-.rdrtog:hover{background:#ede8dd;}
-.rdrleft{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
-.rdrlabel{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8a7a65;font-weight:300;font-family:'Jost',sans-serif;}
-.rdrref{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:#1a1a2e;}
-.rdrarrow{color:#8a7a65;transition:transform .25s ease;flex-shrink:0;}
-.rdrarrow.open{transform:rotate(180deg);}
-.rdrbody{padding:4px 24px 24px;animation:fi .2s ease;}
+/* DRAWERS */
+.drawer{border-top:1px solid #e0d9ce;background:#f5f0e8;}
+.drawer-tog{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:transparent;border:none;cursor:pointer;transition:background .2s;}
+.drawer-tog:hover{background:#ede8dd;}
+.drawer-left{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
+.drawer-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8a7a65;font-weight:300;font-family:'Jost',sans-serif;}
+.drawer-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:#1a1a2e;}
+.drawer-arrow{color:#8a7a65;transition:transform .25s ease;flex-shrink:0;}
+.drawer-arrow.open{transform:rotate(180deg);}
+.drawer-body{padding:4px 24px 24px;animation:fi .2s ease;}
+/* OUTLINE */
+.outline-list{display:flex;flex-direction:column;gap:0;}
+.outline-item{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid #ede8dd;}
+.outline-item:last-child{border-bottom:none;}
+.outline-num{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#c8b898;min-width:18px;flex-shrink:0;letter-spacing:.05em;}
+.outline-text{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.5;color:#2a2040;}
+/* PASSAGE */
 .rdrtrans{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#b8a98a;font-weight:300;margin-bottom:14px;font-family:'Jost',sans-serif;}
 .verses{display:flex;flex-direction:column;}
 .verse{display:flex;gap:14px;padding:8px 0;border-bottom:1px solid #ede8dd;}
@@ -53,6 +61,7 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#c8b898;min-width:26px;padding-top:4px;letter-spacing:.05em;flex-shrink:0;}
 .vtxt{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.65;color:#2a2040;}
 .rdrcredit{font-size:10px;color:#b8a98a;font-family:'Jost',sans-serif;font-weight:300;margin-top:16px;padding-top:14px;border-top:1px solid #ede8dd;line-height:1.6;}
+/* QUESTIONS */
 .qsec{padding:28px 22px 48px;max-width:800px;margin:0 auto;}
 .slbl{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#8a7a65;font-weight:300;margin-bottom:16px;}
 .inst{background:#ede8dd;border-radius:4px;padding:13px 17px;margin-bottom:22px;font-size:13px;color:#6b5e4e;line-height:1.65;font-weight:300;}
@@ -75,7 +84,7 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .fr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#b8a98a;line-height:1.5;}
 .fs{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3a3a5a;margin-top:13px;}
 @keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.qsec{padding:22px 18px 38px;}.vsec{padding:16px;}.rdrbody{padding:4px 18px 20px;}.rdrtog{padding:16px 18px;}}
+@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.qsec{padding:22px 18px 38px;}.vsec{padding:16px;}.drawer-body{padding:4px 18px 20px;}.drawer-tog{padding:16px 18px;}}
 </style>
 </head>
 <body>
@@ -88,7 +97,9 @@ const REFRAIN = "Have you met Him? Are you living in Him?";
 
 const sessions = [
   {
-    week: 0, label: "Intro", title: "Christ at the Centre", passage: "Introduction", videoId: "PlHgZX1IUvc", verses: null,
+    week: 0, label: "Intro", title: "Christ at the Centre", passage: "Introduction", videoId: "PlHgZX1IUvc",
+    outline: null,
+    verses: null,
     questionSets: [
       { label: "Set 1", context: "After the opening", questions: ["Have you ever felt more or less accepted by God based on how well you were doing spiritually? What drove that feeling?", "Why do you think the idea of 'access to God' is such a powerful human concern? Why hasn't it gone away?", "Why do we so easily slip back to asking 'What must I do to enter God's presence?' rather than 'If I am already in Christ, how do I now live?'"] },
       { label: "Set 2", context: "After the main talk", questions: ["Can you think of areas of life where you're more likely to live towards God — doing things to get closer — rather than from God, living differently because you are already in Christ?", "If the church really believed it already lives in God's presence, what might change about how we relate to one another?", "What would it look like this week to live from the reality that you are already in Christ, rather than trying to earn closeness to God?"] },
@@ -96,6 +107,14 @@ const sessions = [
   },
   {
     week: 1, label: "Week 1", title: "The Gospel Changes Everything", passage: "Colossians 1:3\u20138", videoId: "Dn11w7PTW0U",
+    outline: [
+      "Faith in Christ: Christianity begins with a Person",
+      "Love for the saints: the gospel connects us to people",
+      "Hope produces faith and love",
+      "The gospel: not a ladder, but a doorway",
+      "Secondhand religion vs firsthand encounter",
+      "The gospel spreads without upgrades",
+    ],
     verses: [
       { n: 3, t: "We always thank God, the Father of our Lord Jesus Christ, when we pray for you," },
       { n: 4, t: "since we heard of your faith in Christ Jesus and of the love that you have for all the saints," },
@@ -112,6 +131,14 @@ const sessions = [
   },
   {
     week: 2, label: "Week 2", title: "Life Inside the Temple", passage: "Colossians 1:9\u201314", videoId: "PyDUQ37ipMc",
+    outline: [
+      "The question humanity has never stopped asking",
+      "Access without transformation",
+      "Paul's prayer assumes you're already in",
+      "A worthy walk: living like you belong",
+      "What life inside the temple actually looks like",
+      "Why this life is possible: you've already been moved",
+    ],
     verses: [
       { n: 9, t: "And so, from the day we heard, we have not ceased to pray for you, asking that you may be filled with the knowledge of his will in all spiritual wisdom and understanding," },
       { n: 10, t: "so as to walk in a manner worthy of the Lord, fully pleasing to him: bearing fruit in every good work and increasing in the knowledge of God;" },
@@ -128,6 +155,15 @@ const sessions = [
   },
   {
     week: 3, label: "Week 3", title: "The Only Stage That Matters", passage: "Colossians 1:15\u201323", videoId: "-b7M0sFrZP4",
+    outline: [
+      "Stage building: making a name for ourselves",
+      "The centre already exists",
+      "Who Jesus is: image of God, creator of all things",
+      "What he begins: the new creation",
+      "How he begins it: the blood of the cross",
+      "The name you don't have to build",
+      "Continuing in the faith",
+    ],
     verses: [
       { n: 15, t: "He is the image of the invisible God, the firstborn of all creation." },
       { n: 16, t: "For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities — all things were created through him and for him." },
@@ -147,6 +183,12 @@ const sessions = [
   },
   {
     week: 4, label: "Week 4", title: "When Christ Truly Becomes the Centre", passage: "Colossians 1:24\u20132:5", videoId: "4qNCMx3Gaz8",
+    outline: [
+      "The difference between duty and love",
+      "A heart captured by Christ",
+      "A people reshaped by Christ",
+      "A church kept steady in Christ",
+    ],
     verses: [
       { n: 24, t: "Now I rejoice in my sufferings for your sake, and in my flesh I am filling up what is lacking in Christ's afflictions for the sake of his body, that is, the church," },
       { n: 25, t: "of which I became a minister according to the stewardship from God that was given to me for you, to make the word of God fully known," },
@@ -168,6 +210,13 @@ const sessions = [
   },
   {
     week: 5, label: "Week 5", title: "No Ladder Required", passage: "Colossians 2:6\u201315", videoId: "cBMjEX5MWvo",
+    outline: [
+      "Jacob and Nathaniel: grabbing vs receiving",
+      "The ache and the ladder",
+      "The fullness already given",
+      "Why you can trust that claim",
+      "Walking in the fullness",
+    ],
     verses: [
       { n: 6, t: "Therefore, as you received Christ Jesus the Lord, so walk in him," },
       { n: 7, t: "rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." },
@@ -188,14 +237,33 @@ const sessions = [
   },
 ];
 
+function Drawer({ label, title, children }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="drawer">
+      <button className="drawer-tog" onClick={() => setOpen(!open)}>
+        <div className="drawer-left">
+          <span className="drawer-label">{label}</span>
+          <span className="drawer-title">{title}</span>
+        </div>
+        <span className={`drawer-arrow${open ? " open" : ""}`}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="3,6 8,11 13,6" />
+          </svg>
+        </span>
+      </button>
+      {open && <div className="drawer-body">{children}</div>}
+    </div>
+  );
+}
+
 function App() {
   const [wi, setWi] = useState(sessions.length - 1);
   const [si, setSi] = useState(null);
   const [qi, setQi] = useState(null);
-  const [rdrOpen, setRdrOpen] = useState(false);
   const s = sessions[wi];
 
-  const pickWeek = (i) => { setWi(i); setSi(null); setQi(null); setRdrOpen(false); };
+  const pickWeek = (i) => { setWi(i); setSi(null); setQi(null); };
   const pickSet = (i) => { if (si === i) { setSi(null); setQi(null); } else { setSi(i); setQi(null); } };
   const pickQ = (i) => setQi(qi === i ? null : i);
 
@@ -212,7 +280,7 @@ function App() {
         ))}
       </nav>
 
-      <div className="hero">
+      <div className="hero" key={wi}>
         <div className="wklbl">{s.week === 0 ? "Series Introduction" : `Week ${s.week}`}</div>
         <h1 className="htitle">{s.title}</h1>
         <div className="hpass">{s.passage}</div>
@@ -232,34 +300,32 @@ function App() {
         </a>
       </div>
 
-      {s.verses && (
-        <div className="rdrsec">
-          <button className="rdrtog" onClick={() => setRdrOpen(!rdrOpen)}>
-            <div className="rdrleft">
-              <span className="rdrlabel">Read the passage</span>
-              <span className="rdrref">{s.passage}</span>
-            </div>
-            <span className={`rdrarrow${rdrOpen ? " open" : ""}`}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="3,6 8,11 13,6" />
-              </svg>
-            </span>
-          </button>
-          {rdrOpen && (
-            <div className="rdrbody">
-              <div className="rdrtrans">ESV · English Standard Version</div>
-              <div className="verses">
-                {s.verses.map((v, i) => (
-                  <div className="verse" key={i}>
-                    <span className="vnum">{v.n}</span>
-                    <span className="vtxt">{v.t}</span>
-                  </div>
-                ))}
+      {s.outline && (
+        <Drawer key={`outline-${wi}`} label="Sermon outline" title={s.title}>
+          <div className="outline-list">
+            {s.outline.map((item, i) => (
+              <div className="outline-item" key={i}>
+                <span className="outline-num">{i + 1}</span>
+                <span className="outline-text">{item}</span>
               </div>
-              <div className="rdrcredit">Scripture quotations are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved.</div>
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        </Drawer>
+      )}
+
+      {s.verses && (
+        <Drawer key={`passage-${wi}`} label="Read the passage" title={s.passage}>
+          <div className="rdrtrans">ESV · English Standard Version</div>
+          <div className="verses">
+            {s.verses.map((v, i) => (
+              <div className="verse" key={i}>
+                <span className="vnum">{v.n}</span>
+                <span className="vtxt">{v.t}</span>
+              </div>
+            ))}
+          </div>
+          <div className="rdrcredit">Scripture quotations are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved.</div>
+        </Drawer>
       )}
 
       <div className="qsec">
@@ -273,7 +339,7 @@ function App() {
           ))}
         </div>
         {si !== null && (
-          <div className="spanel">
+          <div className="spanel" key={`${wi}-${si}`}>
             <div className="sctx">{s.questionSets[si].context}</div>
             <div className="qlist">
               {s.questionSets[si].questions.map((q, i) => (
