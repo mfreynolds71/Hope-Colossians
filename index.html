@@ -13,18 +13,26 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .app{min-height:100vh;background:#f5f0e8;font-family:'Jost',sans-serif;color:#1a1a2e;}
+
+/* HEADER */
 .hdr{background:#1a1a2e;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);}
 .hdr-s{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#b8a98a;font-weight:300;}
 .hdr-r{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#b8a98a;opacity:.7;}
+
+/* WEEK NAV */
 .wnav{background:#13132a;border-bottom:1px solid #2a2a4a;padding:0 22px;overflow-x:auto;display:flex;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
 .wnav::-webkit-scrollbar{display:none;}
 .wtab{flex-shrink:0;padding:14px 16px;font-size:12px;font-weight:400;letter-spacing:.08em;color:#5a5a7a;cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;font-family:'Jost',sans-serif;}
 .wtab:hover{color:#b8a98a;}
 .wtab.on{color:#f5f0e8;border-bottom-color:#b8a98a;}
+
+/* HERO */
 .hero{padding:34px 22px 26px;background:#1a1a2e;animation:fi .3s ease;}
 .wklbl{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#b8a98a;font-weight:300;margin-bottom:10px;}
 .htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,8vw,50px);font-weight:500;color:#f5f0e8;line-height:1.05;margin-bottom:10px;}
 .hpass{font-size:11px;letter-spacing:.15em;color:#b8a98a;text-transform:uppercase;font-weight:300;}
+
+/* VIDEO */
 .vsec{background:#0f0f1e;padding:22px;}
 .vcard{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;position:relative;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;background:radial-gradient(ellipse at 60% 40%,#2a2a50 0%,#0f0f1e 70%);border:1px solid #2e2e4e;transition:border-color .2s;}
 .vcard:hover{border-color:#4a4a7a;}
@@ -37,54 +45,62 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .vcard:hover .pbtn{transform:scale(1.1);background:rgba(245,240,232,.18);border-color:rgba(245,240,232,.55);}
 .pico{width:0;height:0;border-style:solid;border-width:8px 0 8px 15px;border-color:transparent transparent transparent #f5f0e8;margin-left:4px;}
 .vlbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,169,138,.7);font-weight:300;}
-/* DRAWERS */
-.drawer{border-top:1px solid #e0d9ce;background:#f5f0e8;}
-.drawer-tog{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:transparent;border:none;cursor:pointer;transition:background .2s;}
-.drawer-tog:hover{background:#ede8dd;}
-.drawer-left{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
-.drawer-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8a7a65;font-weight:300;font-family:'Jost',sans-serif;}
-.drawer-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:#1a1a2e;}
-.drawer-arrow{color:#8a7a65;transition:transform .25s ease;flex-shrink:0;}
-.drawer-arrow.open{transform:rotate(180deg);}
-.drawer-body{padding:4px 24px 24px;animation:fi .2s ease;}
-/* OUTLINE */
-.outline-list{display:flex;flex-direction:column;gap:0;}
-.outline-item{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid #ede8dd;}
-.outline-item:last-child{border-bottom:none;}
-.outline-num{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#c8b898;min-width:18px;flex-shrink:0;letter-spacing:.05em;}
-.outline-text{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.5;color:#2a2040;}
-/* PASSAGE */
-.rdrtrans{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#b8a98a;font-weight:300;margin-bottom:14px;font-family:'Jost',sans-serif;}
+
+/* SECTIONS */
+.sections{padding:24px 22px 48px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.sec-inst{background:#ede8dd;border-radius:4px;padding:13px 17px;margin-bottom:8px;font-size:13px;color:#6b5e4e;line-height:1.65;font-weight:300;}
+
+.sec-card{background:#fff;border:1px solid #e0d9ce;border-radius:6px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.sec-card.open{border-color:#1a1a2e;box-shadow:0 2px 16px rgba(26,26,46,.09);}
+.sec-card:hover{border-color:#a89880;}
+.sec-card.open:hover{border-color:#1a1a2e;}
+
+.sec-head{width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;background:transparent;border:none;cursor:pointer;text-align:left;}
+.sec-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;color:#b8a98a;flex-shrink:0;min-width:20px;}
+.sec-card.open .sec-num{color:#8a7060;}
+.sec-info{flex:1;display:flex;flex-direction:column;gap:3px;}
+.sec-context{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:#b8a98a;}
+.sec-card.open .sec-context{color:#8a7a65;}
+.sec-heading{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:#2a2040;line-height:1.3;}
+.sec-card.open .sec-heading{color:#1a1a2e;}
+.sec-arrow{color:#c8bba8;transition:transform .25s ease;flex-shrink:0;}
+.sec-card.open .sec-arrow{transform:rotate(180deg);color:#8a7a65;}
+
+.sec-body{border-top:1px solid #f0e8de;animation:fi .2s ease;}
+
+/* PASSAGE WITHIN SECTION */
+.sec-passage{padding:18px 18px 0;}
+.sec-passage-ref{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#b8a98a;margin-bottom:12px;}
 .verses{display:flex;flex-direction:column;}
-.verse{display:flex;gap:14px;padding:8px 0;border-bottom:1px solid #ede8dd;}
+.verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid #f0e8de;}
 .verse:last-child{border-bottom:none;}
-.vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#c8b898;min-width:26px;padding-top:4px;letter-spacing:.05em;flex-shrink:0;}
-.vtxt{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.65;color:#2a2040;}
-.rdrcredit{font-size:10px;color:#b8a98a;font-family:'Jost',sans-serif;font-weight:300;margin-top:16px;padding-top:14px;border-top:1px solid #ede8dd;line-height:1.6;}
-/* QUESTIONS */
-.qsec{padding:28px 22px 48px;max-width:800px;margin:0 auto;}
-.slbl{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#8a7a65;font-weight:300;margin-bottom:16px;}
-.inst{background:#ede8dd;border-radius:4px;padding:13px 17px;margin-bottom:22px;font-size:13px;color:#6b5e4e;line-height:1.65;font-weight:300;}
-.stabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;}
-.stab{font-size:13px;font-weight:400;letter-spacing:.06em;padding:9px 18px;border-radius:2px;border:1px solid #c8bba8;cursor:pointer;transition:all .2s;background:transparent;color:#6b5e4e;font-family:'Jost',sans-serif;}
-.stab:hover{background:#ede6d9;border-color:#a89880;color:#3a2e20;}
-.stab.on{background:#1a1a2e;border-color:#1a1a2e;color:#f5f0e8;}
-.spanel{animation:fi .25s ease;}
-.sctx{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#8a7a65;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid #ddd6c8;}
-.qlist{display:flex;flex-direction:column;gap:10px;}
-.qcard{background:#fff;border:1px solid #e0d9ce;border-radius:4px;padding:17px 19px;cursor:pointer;transition:all .2s;position:relative;}
-.qcard:hover{border-color:#a89880;box-shadow:0 2px 10px rgba(26,26,46,.06);}
-.qcard.on{border-color:#1a1a2e;background:#f9f6f0;box-shadow:0 2px 14px rgba(26,26,46,.09);}
-.qnum{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b8a98a;margin-bottom:8px;}
+.vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#c8b898;min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;}
+.vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.65;color:#2a2040;}
+.esv-credit{font-size:10px;color:#c8b898;font-family:'Jost',sans-serif;font-weight:300;margin-top:12px;line-height:1.5;}
+
+/* DIVIDER BETWEEN PASSAGE AND QUESTIONS */
+.sec-divider{margin:18px 18px 0;border:none;border-top:1px solid #ede8dd;}
+
+/* QUESTIONS WITHIN SECTION */
+.sec-questions{padding:18px;}
+.sec-q-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:#8a7a65;margin-bottom:12px;}
+.qlist{display:flex;flex-direction:column;gap:8px;}
+.qcard{background:#f9f6f0;border:1px solid #e8e0d4;border-radius:4px;padding:14px 16px;cursor:pointer;transition:all .2s;position:relative;}
+.qcard:hover{border-color:#a89880;background:#f5f0e8;}
+.qcard.on{border-color:#1a1a2e;background:#f0ece4;box-shadow:0 1px 8px rgba(26,26,46,.08);}
+.qnum{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b8a98a;margin-bottom:7px;}
 .qcard.on .qnum{color:#8a7060;}
-.qtxt{font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.55;color:#2a2040;}
+.qtxt{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.55;color:#2a2040;}
 .qcard.on .qtxt{color:#1a1a2e;font-weight:500;}
-.qdot{position:absolute;top:15px;right:15px;width:7px;height:7px;border-radius:50%;background:#1a1a2e;}
+.qdot{position:absolute;top:13px;right:14px;width:6px;height:6px;border-radius:50%;background:#1a1a2e;}
+
+/* FOOTER */
 .ftr{background:#1a1a2e;padding:30px 22px;text-align:center;}
 .fr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#b8a98a;line-height:1.5;}
 .fs{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3a3a5a;margin-top:13px;}
-@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.qsec{padding:22px 18px 38px;}.vsec{padding:16px;}.drawer-body{padding:4px 18px 20px;}.drawer-tog{padding:16px 18px;}}
+
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.vsec{padding:16px;}.sections{padding:20px 16px 40px;}}
 </style>
 </head>
 <body>
@@ -98,174 +114,329 @@ const REFRAIN = "Have you met Him? Are you living in Him?";
 const sessions = [
   {
     week: 0, label: "Intro", title: "Christ at the Centre", passage: "Introduction", videoId: "PlHgZX1IUvc",
-    outline: null,
-    verses: null,
-    questionSets: [
-      { label: "Set 1", context: "After the opening", questions: ["Have you ever felt more or less accepted by God based on how well you were doing spiritually? What drove that feeling?", "Why do you think the idea of 'access to God' is such a powerful human concern? Why hasn't it gone away?", "Why do we so easily slip back to asking 'What must I do to enter God's presence?' rather than 'If I am already in Christ, how do I now live?'"] },
-      { label: "Set 2", context: "After the main talk", questions: ["Can you think of areas of life where you're more likely to live towards God — doing things to get closer — rather than from God, living differently because you are already in Christ?", "If the church really believed it already lives in God's presence, what might change about how we relate to one another?", "What would it look like this week to live from the reality that you are already in Christ, rather than trying to earn closeness to God?"] },
+    sections: [
+      {
+        heading: "The question driving the whole series",
+        context: "After the opening",
+        verses: null,
+        questions: [
+          "Have you ever felt more or less accepted by God based on how well you were doing spiritually? What drove that feeling?",
+          "Why do you think the idea of 'access to God' is such a powerful human concern? Why hasn't it gone away?",
+          "Why do we so easily slip back to asking 'What must I do to enter God's presence?' rather than 'If I am already in Christ, how do I now live?'",
+        ],
+      },
+      {
+        heading: "Living from the presence, not towards it",
+        context: "After the main talk",
+        verses: null,
+        questions: [
+          "Can you think of areas of life where you're more likely to live towards God — doing things to get closer — rather than from God, living differently because you are already in Christ?",
+          "If the church really believed it already lives in God's presence, what might change about how we relate to one another?",
+          "What would it look like this week to live from the reality that you are already in Christ, rather than trying to earn closeness to God?",
+        ],
+      },
     ],
   },
   {
     week: 1, label: "Week 1", title: "The Gospel Changes Everything", passage: "Colossians 1:3\u20138", videoId: "Dn11w7PTW0U",
-    outline: [
-      "Faith in Christ: Christianity begins with a Person",
-      "Love for the saints: the gospel connects us to people",
-      "Hope produces faith and love",
-      "The gospel: not a ladder, but a doorway",
-      "Secondhand religion vs firsthand encounter",
-      "The gospel spreads without upgrades",
-    ],
-    verses: [
-      { n: 3, t: "We always thank God, the Father of our Lord Jesus Christ, when we pray for you," },
-      { n: 4, t: "since we heard of your faith in Christ Jesus and of the love that you have for all the saints," },
-      { n: 5, t: "because of the hope laid up for you in heaven. Of this you have heard before in the word of the truth, the gospel," },
-      { n: 6, t: "which has come to you, as indeed in the whole world it is bearing fruit and increasing — as it also does among you, since the day you heard it and understood the grace of God in truth," },
-      { n: 7, t: "just as you learned it from Epaphras our beloved fellow servant. He is a faithful minister of Christ on your behalf" },
-      { n: 8, t: "and has made known to us your love in the Spirit." },
-    ],
-    questionSets: [
-      { label: "Set 1", context: "After the introduction", questions: ["When you hear the word 'Christian,' what do you think people around you most assume it means?", "Which feels more true of you right now: 'I'm trying to be better' or 'I'm learning to be with Jesus'? Why?", "What do you think is the biggest difference between moral improvement and actually knowing Christ?"] },
-      { label: "Set 2", context: "After 'Faith in Christ'", questions: ["What does faith look like in real life this week?", "Where in your life right now do you most need faith to be a gift of God rather than bravado? What would that look like?", "What's one situation where you're tempted to rely on yourself rather than lean on Christ?"] },
-      { label: "Set 3", context: "After 'Hope produces faith and love'", questions: ["What do you think you normally build your hope on day to day?", "How would your relationships change if your hope was truly secure — held safe beyond the reach of this life?", "Paul says hope fuels faith and love. Where do you see that connection in your own life?"] },
+    sections: [
+      {
+        heading: "Christianity begins with a Person",
+        context: "After the introduction",
+        verses: [
+          { n: 3, t: "We always thank God, the Father of our Lord Jesus Christ, when we pray for you," },
+          { n: 4, t: "since we heard of your faith in Christ Jesus and of the love that you have for all the saints," },
+        ],
+        questions: [
+          "When you hear the word 'Christian,' what do you think people around you most assume it means?",
+          "Which feels more true of you right now: 'I'm trying to be better' or 'I'm learning to be with Jesus'? Why?",
+          "What do you think is the biggest difference between moral improvement and actually knowing Christ?",
+        ],
+      },
+      {
+        heading: "Hope produces faith and love",
+        context: "After 'Faith in Christ'",
+        verses: [
+          { n: 5, t: "because of the hope laid up for you in heaven. Of this you have heard before in the word of the truth, the gospel," },
+          { n: 6, t: "which has come to you, as indeed in the whole world it is bearing fruit and increasing — as it also does among you, since the day you heard it and understood the grace of God in truth," },
+        ],
+        questions: [
+          "What does faith look like in real life this week?",
+          "Where in your life right now do you most need faith to be a gift of God rather than bravado? What would that look like?",
+          "What's one situation where you're tempted to rely on yourself rather than lean on Christ?",
+        ],
+      },
+      {
+        heading: "Secondhand religion vs firsthand encounter",
+        context: "After 'Hope produces faith and love'",
+        verses: [
+          { n: 7, t: "just as you learned it from Epaphras our beloved fellow servant. He is a faithful minister of Christ on your behalf" },
+          { n: 8, t: "and has made known to us your love in the Spirit." },
+        ],
+        questions: [
+          "What do you think you normally build your hope on day to day?",
+          "How would your relationships change if your hope was truly secure — held safe beyond the reach of this life?",
+          "Paul says hope fuels faith and love. Where do you see that connection in your own life?",
+        ],
+      },
     ],
   },
   {
     week: 2, label: "Week 2", title: "Life Inside the Temple", passage: "Colossians 1:9\u201314", videoId: "PyDUQ37ipMc",
-    outline: [
-      "The question humanity has never stopped asking",
-      "Access without transformation",
-      "Paul's prayer assumes you're already in",
-      "A worthy walk: living like you belong",
-      "What life inside the temple actually looks like",
-      "Why this life is possible: you've already been moved",
-    ],
-    verses: [
-      { n: 9, t: "And so, from the day we heard, we have not ceased to pray for you, asking that you may be filled with the knowledge of his will in all spiritual wisdom and understanding," },
-      { n: 10, t: "so as to walk in a manner worthy of the Lord, fully pleasing to him: bearing fruit in every good work and increasing in the knowledge of God;" },
-      { n: 11, t: "being strengthened with all power, according to his glorious might, for all endurance and patience with joy;" },
-      { n: 12, t: "giving thanks to the Father, who has qualified you to share in the inheritance of the saints in light." },
-      { n: 13, t: "He has delivered us from the domain of darkness and transferred us to the kingdom of his beloved Son," },
-      { n: 14, t: "in whom we have redemption, the forgiveness of sins." },
-    ],
-    questionSets: [
-      { label: "Set 1", context: "After the opening", questions: ["When you think about your relationship with God, what feels more true right now: living with Him or visiting Him?", "What does 'hovering at the doorway' look like in everyday Christian life?", "What do you think makes it hard for people to relax into belonging with God?"] },
-      { label: "Set 2", context: "After 'A worthy walk'", questions: ["What environments or influences shape you most during an ordinary week?", "Where do you notice the world forming your desires, reactions, or fears?", "What might it look like to allow God's presence to be more formative than those other voices?"] },
-      { label: "Set 3", context: "After 'Life inside the temple'", questions: ["What might be some 'boxes' you're still living out of — areas of life not yet settled into life with Christ?", "What helps you trust that God is patient and present as you unpack?", "What would it look like this week to open just one box with Him?"] },
+    sections: [
+      {
+        heading: "The question humanity has never stopped asking",
+        context: "After the opening",
+        verses: null,
+        questions: [
+          "When you think about your relationship with God, what feels more true right now: living with Him or visiting Him?",
+          "What does 'hovering at the doorway' look like in everyday Christian life?",
+          "What do you think makes it hard for people to relax into belonging with God?",
+        ],
+      },
+      {
+        heading: "A worthy walk: living like you belong",
+        context: "After 'Paul's prayer assumes you're already in'",
+        verses: [
+          { n: 9, t: "And so, from the day we heard, we have not ceased to pray for you, asking that you may be filled with the knowledge of his will in all spiritual wisdom and understanding," },
+          { n: 10, t: "so as to walk in a manner worthy of the Lord, fully pleasing to him: bearing fruit in every good work and increasing in the knowledge of God;" },
+        ],
+        questions: [
+          "What environments or influences shape you most during an ordinary week?",
+          "Where do you notice the world forming your desires, reactions, or fears?",
+          "What might it look like to allow God's presence to be more formative than those other voices?",
+        ],
+      },
+      {
+        heading: "Why this life is possible: you've already been moved",
+        context: "After 'What life inside the temple looks like'",
+        verses: [
+          { n: 11, t: "being strengthened with all power, according to his glorious might, for all endurance and patience with joy;" },
+          { n: 12, t: "giving thanks to the Father, who has qualified you to share in the inheritance of the saints in light." },
+          { n: 13, t: "He has delivered us from the domain of darkness and transferred us to the kingdom of his beloved Son," },
+          { n: 14, t: "in whom we have redemption, the forgiveness of sins." },
+        ],
+        questions: [
+          "What might be some 'boxes' you're still living out of — areas of life not yet settled into life with Christ?",
+          "What helps you trust that God is patient and present as you unpack?",
+          "What would it look like this week to open just one box with Him?",
+        ],
+      },
     ],
   },
   {
     week: 3, label: "Week 3", title: "The Only Stage That Matters", passage: "Colossians 1:15\u201323", videoId: "-b7M0sFrZP4",
-    outline: [
-      "Stage building: making a name for ourselves",
-      "The centre already exists",
-      "Who Jesus is: image of God, creator of all things",
-      "What he begins: the new creation",
-      "How he begins it: the blood of the cross",
-      "The name you don't have to build",
-      "Continuing in the faith",
-    ],
-    verses: [
-      { n: 15, t: "He is the image of the invisible God, the firstborn of all creation." },
-      { n: 16, t: "For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities — all things were created through him and for him." },
-      { n: 17, t: "And he is before all things, and in him all things hold together." },
-      { n: 18, t: "And he is the head of the body, the church. He is the beginning, the firstborn from the dead, that in everything he might be preeminent." },
-      { n: 19, t: "For in him all the fullness of God was pleased to dwell," },
-      { n: 20, t: "and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross." },
-      { n: 21, t: "And you, who once were alienated and hostile in mind, doing evil deeds," },
-      { n: 22, t: "he has now reconciled in his body of flesh by his death, in order to present you holy and blameless and above reproach before him," },
-      { n: 23, t: "if indeed you continue in the faith, stable and steadfast, not shifting from the hope of the gospel that you heard, which has been proclaimed in all creation under heaven, and of which I, Paul, became a minister." },
-    ],
-    questionSets: [
-      { label: "Set 1", context: "After 'Stage building'", questions: ["Where do you notice pressure to present a version of yourself rather than your real self?", "What do you think people are really searching for underneath the need for a stage?", "Why do you think humanity has always tried to make a name for itself?"] },
-      { label: "Set 2", context: "After 'The centre already exists'", questions: ["Which description of Jesus in this passage stands out most to you, and why?", "What changes about how you live if everything really is for Him?", "How does knowing Christ is the true temple reshape how we think about getting closer to God?"] },
-      { label: "Set 3", context: "After 'The name you don't have to build'", questions: ["What do you find hardest to believe about being presented holy and blameless before God?", "Where are you still tempted to build a name for yourself rather than receive one?", "What helps you stay rooted in Christ instead of drifting toward comparison?"] },
+    sections: [
+      {
+        heading: "Stage building: making a name for ourselves",
+        context: "After the opening",
+        verses: null,
+        questions: [
+          "Where do you notice pressure to present a version of yourself rather than your real self?",
+          "What do you think people are really searching for underneath the need for a stage?",
+          "Why do you think humanity has always tried to make a name for itself?",
+        ],
+      },
+      {
+        heading: "The centre already exists: who Jesus is and what he begins",
+        context: "After 'The centre already exists'",
+        verses: [
+          { n: 15, t: "He is the image of the invisible God, the firstborn of all creation." },
+          { n: 16, t: "For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities — all things were created through him and for him." },
+          { n: 17, t: "And he is before all things, and in him all things hold together." },
+          { n: 18, t: "And he is the head of the body, the church. He is the beginning, the firstborn from the dead, that in everything he might be preeminent." },
+          { n: 19, t: "For in him all the fullness of God was pleased to dwell," },
+          { n: 20, t: "and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross." },
+        ],
+        questions: [
+          "Which description of Jesus in this passage stands out most to you, and why?",
+          "What changes about how you live if everything really is for Him?",
+          "How does knowing Christ is the true temple reshape how we think about getting closer to God?",
+        ],
+      },
+      {
+        heading: "The name you don't have to build",
+        context: "After 'The blood of the cross'",
+        verses: [
+          { n: 21, t: "And you, who once were alienated and hostile in mind, doing evil deeds," },
+          { n: 22, t: "he has now reconciled in his body of flesh by his death, in order to present you holy and blameless and above reproach before him," },
+          { n: 23, t: "if indeed you continue in the faith, stable and steadfast, not shifting from the hope of the gospel that you heard, which has been proclaimed in all creation under heaven, and of which I, Paul, became a minister." },
+        ],
+        questions: [
+          "What do you find hardest to believe about being presented holy and blameless before God?",
+          "Where are you still tempted to build a name for yourself rather than receive one?",
+          "What helps you stay rooted in Christ instead of drifting toward comparison?",
+        ],
+      },
     ],
   },
   {
     week: 4, label: "Week 4", title: "When Christ Truly Becomes the Centre", passage: "Colossians 1:24\u20132:5", videoId: "4qNCMx3Gaz8",
-    outline: [
-      "The difference between duty and love",
-      "A heart captured by Christ",
-      "A people reshaped by Christ",
-      "A church kept steady in Christ",
-    ],
-    verses: [
-      { n: 24, t: "Now I rejoice in my sufferings for your sake, and in my flesh I am filling up what is lacking in Christ's afflictions for the sake of his body, that is, the church," },
-      { n: 25, t: "of which I became a minister according to the stewardship from God that was given to me for you, to make the word of God fully known," },
-      { n: 26, t: "the mystery hidden for ages and generations but now revealed to his saints." },
-      { n: 27, t: "To them God chose to make known how great among the Gentiles are the riches of the glory of this mystery, which is Christ in you, the hope of glory." },
-      { n: 28, t: "Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ." },
-      { n: 29, t: "For this I toil, struggling with all his energy that he powerfully works within me." },
-      { n: "2:1", t: "For I want you to know how great a struggle I have for you and for those at Laodicea and for all who have not seen me face to face," },
-      { n: 2, t: "that their hearts may be encouraged, being knit together in love, to reach all the riches of full assurance of understanding and the knowledge of God's mystery, which is Christ," },
-      { n: 3, t: "in whom are hidden all the treasures of wisdom and knowledge." },
-      { n: 4, t: "I say this in order that no one may delude you with plausible arguments." },
-      { n: 5, t: "For though I am absent in body, yet I am with you in spirit, rejoicing to see your good order and the firmness of your faith in Christ." },
-    ],
-    questionSets: [
-      { label: "Set 1", context: "After the introduction", questions: ["Do you recognise the difference between reluctant duty and joyful love in your own walk with Christ? What does that tension look like for you?", "If 'Christ in you' is true through the week, what difference could it make in how you handle stress, how you speak to family, or how you respond to disappointment?", "Paul labours hard, but with Christ's energy. Where are you currently overworking in your own strength — or avoiding effort altogether?"] },
-      { label: "Set 2", context: "After 'Knit together in love'", questions: ["When do you find it hardest to love your brothers and sisters? What does being knitted together in love mean in those moments?", "Paul links encouragement with assurance. Who has encouraged your faith in the past year? Who might God be prompting you to intentionally encourage this week?", "If Christ truly dwells in other believers, how does that change the way we listen to them, the way we disagree, and the way we forgive?"] },
-      { label: "Set 3", context: "After 'So that no one may delude you'", questions: ["How does 'Jesus plus' pressure appear in your life and thinking — Jesus plus success, impressive parenting, spiritual experiences, theological mastery, image management?", "When do you most drift from knowing Christ as your centre — when tired, busy, criticised, praised, scrolling, comparing?", "If someone watched your last seven days, what would they conclude is at the centre of your life?"] },
+    sections: [
+      {
+        heading: "A heart captured by Christ",
+        context: "After the introduction",
+        verses: [
+          { n: 24, t: "Now I rejoice in my sufferings for your sake, and in my flesh I am filling up what is lacking in Christ's afflictions for the sake of his body, that is, the church," },
+          { n: 25, t: "of which I became a minister according to the stewardship from God that was given to me for you, to make the word of God fully known," },
+          { n: 26, t: "the mystery hidden for ages and generations but now revealed to his saints." },
+          { n: 27, t: "To them God chose to make known how great among the Gentiles are the riches of the glory of this mystery, which is Christ in you, the hope of glory." },
+          { n: 28, t: "Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ." },
+          { n: 29, t: "For this I toil, struggling with all his energy that he powerfully works within me." },
+        ],
+        questions: [
+          "Do you recognise the difference between reluctant duty and joyful love in your own walk with Christ? What does that tension look like for you?",
+          "If 'Christ in you' is true through the week, what difference could it make in how you handle stress, how you speak to family, or how you respond to disappointment?",
+          "Paul labours hard, but with Christ's energy. Where are you currently overworking in your own strength — or avoiding effort altogether?",
+        ],
+      },
+      {
+        heading: "A people reshaped by Christ",
+        context: "After 'A heart captured by Christ'",
+        verses: [
+          { n: "2:1", t: "For I want you to know how great a struggle I have for you and for those at Laodicea and for all who have not seen me face to face," },
+          { n: 2, t: "that their hearts may be encouraged, being knit together in love, to reach all the riches of full assurance of understanding and the knowledge of God's mystery, which is Christ," },
+          { n: 3, t: "in whom are hidden all the treasures of wisdom and knowledge." },
+        ],
+        questions: [
+          "When do you find it hardest to love your brothers and sisters? What does being knitted together in love mean in those moments?",
+          "Paul links encouragement with assurance. Who has encouraged your faith in the past year? Who might God be prompting you to intentionally encourage this week?",
+          "If Christ truly dwells in other believers, how does that change the way we listen to them, the way we disagree, and the way we forgive?",
+        ],
+      },
+      {
+        heading: "A church kept steady in Christ",
+        context: "After 'A people reshaped by Christ'",
+        verses: [
+          { n: 4, t: "I say this in order that no one may delude you with plausible arguments." },
+          { n: 5, t: "For though I am absent in body, yet I am with you in spirit, rejoicing to see your good order and the firmness of your faith in Christ." },
+        ],
+        questions: [
+          "How does 'Jesus plus' pressure appear in your life and thinking — Jesus plus success, impressive parenting, spiritual experiences, theological mastery, image management?",
+          "When do you most drift from knowing Christ as your centre — when tired, busy, criticised, praised, scrolling, comparing?",
+          "If someone watched your last seven days, what would they conclude is at the centre of your life?",
+        ],
+      },
     ],
   },
   {
     week: 5, label: "Week 5", title: "No Ladder Required", passage: "Colossians 2:6\u201315", videoId: "cBMjEX5MWvo",
-    outline: [
-      "Jacob and Nathaniel: grabbing vs receiving",
-      "The ache and the ladder",
-      "The fullness already given",
-      "Why you can trust that claim",
-      "Walking in the fullness",
-    ],
-    verses: [
-      { n: 6, t: "Therefore, as you received Christ Jesus the Lord, so walk in him," },
-      { n: 7, t: "rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." },
-      { n: 8, t: "See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ." },
-      { n: 9, t: "For in him the whole fullness of deity dwells bodily," },
-      { n: 10, t: "and you have been filled in him, who is the head of all rule and authority." },
-      { n: 11, t: "In him also you were circumcised with a circumcision made without hands, by putting off the body of the flesh, by the circumcision of Christ," },
-      { n: 12, t: "having been buried with him in baptism, in which you were also raised with him through faith in the powerful working of God, who raised him from the dead." },
-      { n: 13, t: "And you, who were dead in your trespasses and the uncircumcision of your flesh, God made alive together with him, having forgiven us all our trespasses," },
-      { n: 14, t: "by canceling the record of debt that stood against us with its legal demands. This he set aside, nailing it to the cross." },
-      { n: 15, t: "He disarmed the rulers and authorities and put them to open shame, by triumphing over them in him." },
-    ],
-    questionSets: [
-      { label: "Set 1", context: "After the opening — Jacob and Nathaniel", questions: ["Jacob grabbed even at the moment of divine encounter. Nathaniel received. Which instinct do you recognise more in yourself right now — grabbing or receiving?", "Jesus told Nathaniel he was the true meeting place of heaven and earth, the One who came down rather than a ladder to climb up. What does it do to you to hear that the presence you might have been straining toward has actually come to you?", "Where are you with the two questions we have been carrying through this series? Have you met Him — and are you living in Him?"] },
-      { label: "Set 2", context: "After the ache and the fullness", questions: ["Every human being carries a God-shaped ache. Where do you feel the world — or even religious culture — offering created things to fill what only the Creator can satisfy?", "Paul says 'you have been filled in him' — something already done and settled. What part of you resists that? What would need to change if you actually believed it?", "If thanksgiving is the overflow of someone who has genuinely received the gift — not more stuff, but the Creator himself at Christ's expense — what would it look like for that to become the dominant tone of your life this week?"] },
-      { label: "Set 3", context: "After circumcision, the charge sheet, and the cross", questions: ["The charge sheet — the record of everything we owe God that we cannot pay — has been wiped clean and nailed to the cross. Where are we still living as though we need to appease powers that have already been defeated?", "Being rooted in Christ means our identity is secured at a depth that emotional ups and downs and moral failure cannot reach. Is there an area of your life where you are still trying to secure your own identity rather than receiving it from where you are planted?", "One scholar, having worked through every verse of this passage, closes with a single sentence: what really matters then is Christ and Christ alone. Is that actually true of what drives your week? What would need to change if it were?"] },
+    sections: [
+      {
+        heading: "Jacob and Nathaniel: grabbing vs receiving",
+        context: "After the opening",
+        verses: null,
+        questions: [
+          "Jacob grabbed even at the moment of divine encounter. Nathaniel received. Which instinct do you recognise more in yourself right now — grabbing or receiving?",
+          "Jesus told Nathaniel he was the true meeting place of heaven and earth, the One who came down rather than a ladder to climb up. What does it do to you to hear that the presence you might have been straining toward has actually come to you?",
+          "Where are you with the two questions we have been carrying through this series? Have you met Him — and are you living in Him?",
+        ],
+      },
+      {
+        heading: "The fullness already given",
+        context: "After 'The ache and the ladder'",
+        verses: [
+          { n: 6, t: "Therefore, as you received Christ Jesus the Lord, so walk in him," },
+          { n: 7, t: "rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." },
+          { n: 8, t: "See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ." },
+          { n: 9, t: "For in him the whole fullness of deity dwells bodily," },
+          { n: 10, t: "and you have been filled in him, who is the head of all rule and authority." },
+        ],
+        questions: [
+          "Every human being carries a God-shaped ache. Where do you feel the world — or even religious culture — offering created things to fill what only the Creator can satisfy?",
+          "Paul says 'you have been filled in him' — something already done and settled. What part of you resists that? What would need to change if you actually believed it?",
+          "If thanksgiving is the overflow of someone who has genuinely received the gift — not more stuff, but the Creator himself at Christ's expense — what would it look like for that to become the dominant tone of your life this week?",
+        ],
+      },
+      {
+        heading: "Circumcision, the charge sheet, and the cross",
+        context: "After 'The fullness already given'",
+        verses: [
+          { n: 11, t: "In him also you were circumcised with a circumcision made without hands, by putting off the body of the flesh, by the circumcision of Christ," },
+          { n: 12, t: "having been buried with him in baptism, in which you were also raised with him through faith in the powerful working of God, who raised him from the dead." },
+          { n: 13, t: "And you, who were dead in your trespasses and the uncircumcision of your flesh, God made alive together with him, having forgiven us all our trespasses," },
+          { n: 14, t: "by canceling the record of debt that stood against us with its legal demands. This he set aside, nailing it to the cross." },
+          { n: 15, t: "He disarmed the rulers and authorities and put them to open shame, by triumphing over them in him." },
+        ],
+        questions: [
+          "The charge sheet — the record of everything we owe God that we cannot pay — has been wiped clean and nailed to the cross. Where are we still living as though we need to appease powers that have already been defeated?",
+          "Being rooted in Christ means our identity is secured at a depth that emotional ups and downs and moral failure cannot reach. Is there an area of your life where you are still trying to secure your own identity rather than receiving it from where you are planted?",
+          "One scholar, having worked through every verse of this passage, closes with a single sentence: what really matters then is Christ and Christ alone. Is that actually true of what drives your week? What would need to change if it were?",
+        ],
+      },
     ],
   },
 ];
 
-function Drawer({ label, title, children }) {
+function SectionCard({ section, index, weekKey }) {
   const [open, setOpen] = useState(false);
+  const [qi, setQi] = useState(null);
+  const hasVerses = section.verses && section.verses.length > 0;
+  const hasQuestions = section.questions && section.questions.length > 0;
+
   return (
-    <div className="drawer">
-      <button className="drawer-tog" onClick={() => setOpen(!open)}>
-        <div className="drawer-left">
-          <span className="drawer-label">{label}</span>
-          <span className="drawer-title">{title}</span>
+    <div className={`sec-card${open ? " open" : ""}`}>
+      <button className="sec-head" onClick={() => { setOpen(!open); setQi(null); }}>
+        <span className="sec-num">{index + 1}</span>
+        <div className="sec-info">
+          <span className="sec-context">{section.context}</span>
+          <span className="sec-heading">{section.heading}</span>
         </div>
-        <span className={`drawer-arrow${open ? " open" : ""}`}>
+        <span className="sec-arrow">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="3,6 8,11 13,6" />
           </svg>
         </span>
       </button>
-      {open && <div className="drawer-body">{children}</div>}
+
+      {open && (
+        <div className="sec-body">
+          {hasVerses && (
+            <div className="sec-passage">
+              <div className="sec-passage-ref">ESV · English Standard Version</div>
+              <div className="verses">
+                {section.verses.map((v, i) => (
+                  <div className="verse" key={i}>
+                    <span className="vnum">{v.n}</span>
+                    <span className="vtxt">{v.t}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="esv-credit">Scripture from the ESV® Bible © 2001 Crossway. Used by permission.</div>
+            </div>
+          )}
+
+          {hasVerses && hasQuestions && <hr className="sec-divider" />}
+
+          {hasQuestions && (
+            <div className="sec-questions">
+              <div className="sec-q-label">Discussion Questions</div>
+              <div className="qlist">
+                {section.questions.map((q, i) => (
+                  <div
+                    key={i}
+                    className={`qcard${qi === i ? " on" : ""}`}
+                    onClick={() => setQi(qi === i ? null : i)}
+                  >
+                    {qi === i && <div className="qdot"></div>}
+                    <div className="qnum">Question {i + 1}</div>
+                    <div className="qtxt">{q}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
 
 function App() {
   const [wi, setWi] = useState(sessions.length - 1);
-  const [si, setSi] = useState(null);
-  const [qi, setQi] = useState(null);
   const s = sessions[wi];
 
-  const pickWeek = (i) => { setWi(i); setSi(null); setQi(null); };
-  const pickSet = (i) => { if (si === i) { setSi(null); setQi(null); } else { setSi(i); setQi(null); } };
-  const pickQ = (i) => setQi(qi === i ? null : i);
+  const pickWeek = (i) => setWi(i);
 
   return (
     <div className="app">
@@ -300,58 +471,13 @@ function App() {
         </a>
       </div>
 
-      {s.outline && (
-        <Drawer key={`outline-${wi}`} label="Sermon outline" title={s.title}>
-          <div className="outline-list">
-            {s.outline.map((item, i) => (
-              <div className="outline-item" key={i}>
-                <span className="outline-num">{i + 1}</span>
-                <span className="outline-text">{item}</span>
-              </div>
-            ))}
-          </div>
-        </Drawer>
-      )}
-
-      {s.verses && (
-        <Drawer key={`passage-${wi}`} label="Read the passage" title={s.passage}>
-          <div className="rdrtrans">ESV · English Standard Version</div>
-          <div className="verses">
-            {s.verses.map((v, i) => (
-              <div className="verse" key={i}>
-                <span className="vnum">{v.n}</span>
-                <span className="vtxt">{v.t}</span>
-              </div>
-            ))}
-          </div>
-          <div className="rdrcredit">Scripture quotations are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved.</div>
-        </Drawer>
-      )}
-
-      <div className="qsec">
-        <div className="slbl">Discussion Questions</div>
-        <div className="inst">
-          There {s.questionSets.length === 2 ? "are two" : "are three"} sets of questions — one for each discussion break in the video. Open a set when you reach that point, then tap a question to bring it into focus for your group.
+      <div className="sections" key={`sections-${wi}`}>
+        <div className="sec-inst">
+          Work through the sections below as you watch. Each one opens when you reach that point in the video — tap it to read the passage and discuss the questions together.
         </div>
-        <div className="stabs">
-          {s.questionSets.map((set, i) => (
-            <button key={i} className={`stab${si === i ? " on" : ""}`} onClick={() => pickSet(i)}>{set.label}</button>
-          ))}
-        </div>
-        {si !== null && (
-          <div className="spanel" key={`${wi}-${si}`}>
-            <div className="sctx">{s.questionSets[si].context}</div>
-            <div className="qlist">
-              {s.questionSets[si].questions.map((q, i) => (
-                <div key={i} className={`qcard${qi === i ? " on" : ""}`} onClick={() => pickQ(i)}>
-                  {qi === i && <div className="qdot"></div>}
-                  <div className="qnum">Question {i + 1}</div>
-                  <div className="qtxt">{q}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {s.sections.map((section, i) => (
+          <SectionCard key={`${wi}-${i}`} section={section} index={i} weekKey={wi} />
+        ))}
       </div>
 
       <footer className="ftr">
