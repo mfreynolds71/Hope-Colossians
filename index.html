@@ -29,6 +29,26 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,8vw,50px);font-weight:500;color:#f5f0e8;line-height:1.05;margin-bottom:10px;}
 .hpass{font-size:11px;letter-spacing:.15em;color:#b8a98a;text-transform:uppercase;font-weight:300;}
 
+/* PRE-WATCH PASSAGE */
+.pre-watch{background:#1a1a2e;padding:0 22px 22px;}
+.pre-card{max-width:800px;margin:0 auto;border:1px solid #2e2e4e;border-radius:6px;overflow:hidden;background:#13132a;}
+.pre-tog{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:transparent;border:none;cursor:pointer;transition:background .2s;gap:16px;}
+.pre-tog:hover{background:rgba(255,255,255,.04);}
+.pre-tog-left{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
+.pre-step{font-family:'Jost',sans-serif;font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:#b8a98a;}
+.pre-tog-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:#f5f0e8;}
+.pre-arrow{color:#5a5a7a;transition:transform .25s ease;flex-shrink:0;}
+.pre-arrow.open{transform:rotate(180deg);color:#b8a98a;}
+.pre-body{padding:0 20px 20px;animation:fi .2s ease;border-top:1px solid #2a2a4a;}
+.pre-esv{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#5a5a7a;margin:14px 0 12px;}
+.pre-verses{display:flex;flex-direction:column;}
+.pre-verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid #1e1e38;}
+.pre-verse:last-child{border-bottom:none;}
+.pre-vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#4a4a6a;min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;}
+.pre-vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.7;color:#c8bfb0;}
+.pre-credit{font-size:10px;color:#3a3a5a;font-family:'Jost',sans-serif;font-weight:300;margin-top:14px;line-height:1.5;}
+
+/* VIDEO */
 .vsec{background:#0f0f1e;padding:22px;}
 .vcard{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;position:relative;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;background:radial-gradient(ellipse at 60% 40%,#2a2a50 0%,#0f0f1e 70%);border:1px solid #2e2e4e;transition:border-color .2s;}
 .vcard:hover{border-color:#4a4a7a;}
@@ -42,16 +62,15 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .pico{width:0;height:0;border-style:solid;border-width:8px 0 8px 15px;border-color:transparent transparent transparent #f5f0e8;margin-left:4px;}
 .vlbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,169,138,.7);font-weight:300;}
 
+/* SECTIONS */
 .sections{padding:24px 22px 48px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
 .sec-inst{background:#ede8dd;border-radius:4px;padding:13px 17px;margin-bottom:6px;font-size:13px;color:#6b5e4e;line-height:1.65;font-weight:300;}
 
-/* section card — always shows, content varies */
 .sec-card{background:#fff;border:1px solid #e0d9ce;border-radius:6px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
 .sec-card:hover{border-color:#b0a090;}
 .sec-card.open{border-color:#1a1a2e;box-shadow:0 2px 16px rgba(26,26,46,.09);}
 .sec-card.open:hover{border-color:#1a1a2e;}
 
-/* section header — always clickable */
 .sec-head{width:100%;display:flex;align-items:center;gap:14px;padding:16px 18px;background:transparent;border:none;cursor:pointer;text-align:left;}
 .sec-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;color:#c8b898;flex-shrink:0;min-width:18px;}
 .sec-card.open .sec-num{color:#9a8070;}
@@ -66,7 +85,6 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 
 .sec-body{border-top:1px solid #f0ebe2;animation:fi .2s ease;}
 
-/* passage */
 .sec-passage{padding:18px 18px 0;}
 .sec-esv-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#b8a98a;margin-bottom:12px;}
 .verses{display:flex;flex-direction:column;}
@@ -76,10 +94,8 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.65;color:#2a2040;}
 .esv-credit{font-size:10px;color:#c8b898;font-family:'Jost',sans-serif;font-weight:300;margin-top:10px;line-height:1.5;}
 
-/* divider between passage and questions */
 .sec-div{margin:16px 18px 0;border:none;border-top:1px solid #ede8dd;}
 
-/* questions */
 .sec-questions{padding:16px 18px 18px;}
 .sec-q-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:#8a7a65;margin-bottom:10px;}
 .qlist{display:flex;flex-direction:column;gap:8px;}
@@ -97,7 +113,7 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .fs{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3a3a5a;margin-top:13px;}
 
 @keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.vsec{padding:16px;}.sections{padding:20px 16px 40px;gap:8px;}}
+@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.pre-watch{padding:0 16px 16px;}.vsec{padding:16px;}.sections{padding:20px 16px 40px;gap:8px;}}
 </style>
 </head>
 <body>
@@ -108,16 +124,14 @@ const { useState } = React;
 const SERIES = "Colossians: Christ at the Centre";
 const REFRAIN = "Have you met Him? Are you living in Him?";
 
-// Each section can have verses (or null), questions (or null), or both.
-// The card always appears — it just shows whatever content exists.
-
 const sessions = [
   {
     week: 0, label: "Intro", title: "Christ at the Centre", passage: "Introduction", videoId: "PlHgZX1IUvc",
+    fullPassage: null,
     sections: [
       {
         heading: "The question driving the whole series",
-        context: "After the opening",
+        context: "After the opening — pause here",
         verses: null,
         questions: [
           "Have you ever felt more or less accepted by God based on how well you were doing spiritually? What drove that feeling?",
@@ -127,7 +141,7 @@ const sessions = [
       },
       {
         heading: "Living from the presence, not towards it",
-        context: "After the main talk",
+        context: "After the main talk — pause here",
         verses: null,
         questions: [
           "Can you think of areas of life where you're more likely to live towards God — doing things to get closer — rather than from God, living differently because you are already in Christ?",
@@ -139,6 +153,14 @@ const sessions = [
   },
   {
     week: 1, label: "Week 1", title: "The Gospel Changes Everything", passage: "Colossians 1:3\u20138", videoId: "Dn11w7PTW0U",
+    fullPassage: [
+      { n: 3, t: "We always thank God, the Father of our Lord Jesus Christ, when we pray for you," },
+      { n: 4, t: "since we heard of your faith in Christ Jesus and of the love that you have for all the saints," },
+      { n: 5, t: "because of the hope laid up for you in heaven. Of this you have heard before in the word of the truth, the gospel," },
+      { n: 6, t: "which has come to you, as indeed in the whole world it is bearing fruit and increasing — as it also does among you, since the day you heard it and understood the grace of God in truth," },
+      { n: 7, t: "just as you learned it from Epaphras our beloved fellow servant. He is a faithful minister of Christ on your behalf" },
+      { n: 8, t: "and has made known to us your love in the Spirit." },
+    ],
     sections: [
       {
         heading: "Christianity begins with a Person",
@@ -183,6 +205,14 @@ const sessions = [
   },
   {
     week: 2, label: "Week 2", title: "Life Inside the Temple", passage: "Colossians 1:9\u201314", videoId: "PyDUQ37ipMc",
+    fullPassage: [
+      { n: 9, t: "And so, from the day we heard, we have not ceased to pray for you, asking that you may be filled with the knowledge of his will in all spiritual wisdom and understanding," },
+      { n: 10, t: "so as to walk in a manner worthy of the Lord, fully pleasing to him: bearing fruit in every good work and increasing in the knowledge of God;" },
+      { n: 11, t: "being strengthened with all power, according to his glorious might, for all endurance and patience with joy;" },
+      { n: 12, t: "giving thanks to the Father, who has qualified you to share in the inheritance of the saints in light." },
+      { n: 13, t: "He has delivered us from the domain of darkness and transferred us to the kingdom of his beloved Son," },
+      { n: 14, t: "in whom we have redemption, the forgiveness of sins." },
+    ],
     sections: [
       {
         heading: "The question humanity has never stopped asking",
@@ -226,6 +256,17 @@ const sessions = [
   },
   {
     week: 3, label: "Week 3", title: "The Only Stage That Matters", passage: "Colossians 1:15\u201323", videoId: "-b7M0sFrZP4",
+    fullPassage: [
+      { n: 15, t: "He is the image of the invisible God, the firstborn of all creation." },
+      { n: 16, t: "For by him all things were created, in heaven and on earth, visible and invisible, whether thrones or dominions or rulers or authorities — all things were created through him and for him." },
+      { n: 17, t: "And he is before all things, and in him all things hold together." },
+      { n: 18, t: "And he is the head of the body, the church. He is the beginning, the firstborn from the dead, that in everything he might be preeminent." },
+      { n: 19, t: "For in him all the fullness of God was pleased to dwell," },
+      { n: 20, t: "and through him to reconcile to himself all things, whether on earth or in heaven, making peace by the blood of his cross." },
+      { n: 21, t: "And you, who once were alienated and hostile in mind, doing evil deeds," },
+      { n: 22, t: "he has now reconciled in his body of flesh by his death, in order to present you holy and blameless and above reproach before him," },
+      { n: 23, t: "if indeed you continue in the faith, stable and steadfast, not shifting from the hope of the gospel that you heard, which has been proclaimed in all creation under heaven, and of which I, Paul, became a minister." },
+    ],
     sections: [
       {
         heading: "Stage building: making a name for ourselves",
@@ -272,6 +313,19 @@ const sessions = [
   },
   {
     week: 4, label: "Week 4", title: "When Christ Truly Becomes the Centre", passage: "Colossians 1:24\u20132:5", videoId: "4qNCMx3Gaz8",
+    fullPassage: [
+      { n: 24, t: "Now I rejoice in my sufferings for your sake, and in my flesh I am filling up what is lacking in Christ's afflictions for the sake of his body, that is, the church," },
+      { n: 25, t: "of which I became a minister according to the stewardship from God that was given to me for you, to make the word of God fully known," },
+      { n: 26, t: "the mystery hidden for ages and generations but now revealed to his saints." },
+      { n: 27, t: "To them God chose to make known how great among the Gentiles are the riches of the glory of this mystery, which is Christ in you, the hope of glory." },
+      { n: 28, t: "Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ." },
+      { n: 29, t: "For this I toil, struggling with all his energy that he powerfully works within me." },
+      { n: "2:1", t: "For I want you to know how great a struggle I have for you and for those at Laodicea and for all who have not seen me face to face," },
+      { n: 2, t: "that their hearts may be encouraged, being knit together in love, to reach all the riches of full assurance of understanding and the knowledge of God's mystery, which is Christ," },
+      { n: 3, t: "in whom are hidden all the treasures of wisdom and knowledge." },
+      { n: 4, t: "I say this in order that no one may delude you with plausible arguments." },
+      { n: 5, t: "For though I am absent in body, yet I am with you in spirit, rejoicing to see your good order and the firmness of your faith in Christ." },
+    ],
     sections: [
       {
         heading: "A heart captured by Christ",
@@ -321,6 +375,18 @@ const sessions = [
   },
   {
     week: 5, label: "Week 5", title: "No Ladder Required", passage: "Colossians 2:6\u201315", videoId: "cBMjEX5MWvo",
+    fullPassage: [
+      { n: 6, t: "Therefore, as you received Christ Jesus the Lord, so walk in him," },
+      { n: 7, t: "rooted and built up in him and established in the faith, just as you were taught, abounding in thanksgiving." },
+      { n: 8, t: "See to it that no one takes you captive by philosophy and empty deceit, according to human tradition, according to the elemental spirits of the world, and not according to Christ." },
+      { n: 9, t: "For in him the whole fullness of deity dwells bodily," },
+      { n: 10, t: "and you have been filled in him, who is the head of all rule and authority." },
+      { n: 11, t: "In him also you were circumcised with a circumcision made without hands, by putting off the body of the flesh, by the circumcision of Christ," },
+      { n: 12, t: "having been buried with him in baptism, in which you were also raised with him through faith in the powerful working of God, who raised him from the dead." },
+      { n: 13, t: "And you, who were dead in your trespasses and the uncircumcision of your flesh, God made alive together with him, having forgiven us all our trespasses," },
+      { n: 14, t: "by canceling the record of debt that stood against us with its legal demands. This he set aside, nailing it to the cross." },
+      { n: 15, t: "He disarmed the rulers and authorities and put them to open shame, by triumphing over them in him." },
+    ],
     sections: [
       {
         heading: "Jacob and Nathaniel: grabbing vs receiving",
@@ -382,12 +448,47 @@ const sessions = [
   },
 ];
 
+function PreWatch({ passage, verses, weekKey }) {
+  const [open, setOpen] = useState(false);
+  if (!verses) return null;
+  return (
+    <div className="pre-watch">
+      <div className="pre-card">
+        <button className="pre-tog" onClick={() => setOpen(!open)}>
+          <div className="pre-tog-left">
+            <span className="pre-step">Before you start the video</span>
+            <span className="pre-tog-title">Read {passage} together</span>
+          </div>
+          <span className={`pre-arrow${open ? " open" : ""}`}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="3,6 8,11 13,6" />
+            </svg>
+          </span>
+        </button>
+        {open && (
+          <div className="pre-body">
+            <div className="pre-esv">ESV · English Standard Version</div>
+            <div className="pre-verses">
+              {verses.map((v, i) => (
+                <div className="pre-verse" key={i}>
+                  <span className="pre-vnum">{v.n}</span>
+                  <span className="pre-vtxt">{v.t}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pre-credit">Scripture from the ESV® Bible © 2001 Crossway. Used by permission.</div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function SectionCard({ section, index }) {
   const [open, setOpen] = useState(false);
   const [qi, setQi] = useState(null);
   const hasVerses = section.verses && section.verses.length > 0;
   const hasQuestions = section.questions && section.questions.length > 0;
-  const isTeaching = !hasQuestions;
 
   return (
     <div className={`sec-card${open ? " open" : ""}`}>
@@ -460,7 +561,7 @@ function App() {
 
       <nav className="wnav">
         {sessions.map((x, i) => (
-          <button key={i} className={`wtab${wi === i ? " on" : ""}`} onClick={() => { setWi(i); }}>{x.label}</button>
+          <button key={i} className={`wtab${wi === i ? " on" : ""}`} onClick={() => setWi(i)}>{x.label}</button>
         ))}
       </nav>
 
@@ -469,6 +570,8 @@ function App() {
         <h1 className="htitle">{s.title}</h1>
         <div className="hpass">{s.passage}</div>
       </div>
+
+      <PreWatch key={`pre-${wi}`} passage={s.passage} verses={s.fullPassage} weekKey={wi} />
 
       <div className="vsec">
         <a className="vcard" href={`https://youtu.be/${s.videoId}`} target="_blank" rel="noopener noreferrer">
