@@ -45,17 +45,12 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 .pre-credit{font-size:10px;color:#3a3a5a;font-family:'Jost',sans-serif;font-weight:300;margin-top:14px;line-height:1.5;}
 /* VIDEO */
 .vsec{background:#0f0f1e;padding:22px;}
-.vcard{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;position:relative;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;background:radial-gradient(ellipse at 60% 40%,#2a2a50 0%,#0f0f1e 70%);border:1px solid #2e2e4e;transition:border-color .2s;}
-.vcard:hover{border-color:#4a4a7a;}
-.vbg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,9vw,86px);font-weight:600;color:rgba(184,169,138,.06);pointer-events:none;white-space:nowrap;overflow:hidden;padding:0 20px;text-align:center;}
-.vcont{position:relative;display:flex;flex-direction:column;align-items:center;gap:15px;}
-.vmeta{text-align:center;margin-bottom:4px;}
-.vtag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#b8a98a;font-weight:300;margin-bottom:6px;}
-.vtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,23px);font-weight:500;color:#f5f0e8;line-height:1.2;}
-.pbtn{width:58px;height:58px;border-radius:50%;background:rgba(245,240,232,.1);border:1.5px solid rgba(245,240,232,.28);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s,border-color .2s;}
-.vcard:hover .pbtn{transform:scale(1.1);background:rgba(245,240,232,.18);border-color:rgba(245,240,232,.55);}
-.pico{width:0;height:0;border-style:solid;border-width:8px 0 8px 15px;border-color:transparent transparent transparent #f5f0e8;margin-left:4px;}
-.vlbl{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,169,138,.7);font-weight:300;}
+.vembed-wrap{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;}
+.vembed-wrap iframe{width:100%;height:100%;border:none;display:block;}
+.vcard-soon{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(ellipse at 60% 40%,#2a2a50 0%,#0f0f1e 70%);border:1px solid #2e2e4e;}
+.vcard-soon-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#b8a98a;font-weight:300;}
+.vcard-soon-title{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,23px);font-weight:500;color:#f5f0e8;}
+.vcard-soon-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,169,138,.5);font-weight:300;margin-top:4px;}
 /* SECTIONS */
 .sections{padding:24px 22px 48px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
 .sec-inst{background:#ede8dd;border-radius:4px;padding:13px 17px;margin-bottom:6px;font-size:13px;color:#6b5e4e;line-height:1.65;font-weight:300;}
@@ -299,32 +294,24 @@ function VideoCard({ session }) {
   if (!session.videoId) {
     return (
       <div className="vsec">
-        <div className="vcard" style={{cursor:'default'}}>
-          <div className="vbg">{session.title}</div>
-          <div className="vcont">
-            <div className="vmeta">
-              <div className="vtag">Week {session.week} · {session.passage}</div>
-              <div className="vtitle">{session.title}</div>
-            </div>
-            <div className="vlbl" style={{opacity:.5}}>Video coming soon</div>
-          </div>
+        <div className="vcard-soon">
+          <div className="vcard-soon-tag">{session.week === 0 ? "Introduction" : `Week ${session.week}`} · {session.passage}</div>
+          <div className="vcard-soon-title">{session.title}</div>
+          <div className="vcard-soon-label">Video coming soon</div>
         </div>
       </div>
     );
   }
   return (
     <div className="vsec">
-      <a className="vcard" href={`https://youtu.be/${session.videoId}`} target="_blank" rel="noopener noreferrer">
-        <div className="vbg">{session.title}</div>
-        <div className="vcont">
-          <div className="vmeta">
-            <div className="vtag">{session.week === 0 ? "Introduction" : `Week ${session.week}`} · {session.passage}</div>
-            <div className="vtitle">{session.title}</div>
-          </div>
-          <div className="pbtn"><div className="pico"></div></div>
-          <div className="vlbl">Watch on YouTube</div>
-        </div>
-      </a>
+      <div className="vembed-wrap">
+        <iframe
+          src={`https://www.youtube.com/embed/${session.videoId}?rel=0&modestbranding=1`}
+          title={session.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
     </div>
   );
 }
