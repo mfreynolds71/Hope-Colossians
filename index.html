@@ -5,104 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Colossians: Christ at the Centre — Hope</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
-.app{min-height:100vh;background:#f5f0e8;font-family:'Jost',sans-serif;color:#1a1a2e;}
-.hdr{background:#1a1a2e;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);}
-.hdr-s{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#b8a98a;font-weight:300;}
-.hdr-r{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#b8a98a;opacity:.7;}
-.wnav{background:#13132a;border-bottom:1px solid #2a2a4a;padding:0 22px;overflow-x:auto;display:flex;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
+.app{min-height:100vh;background:#f7f5f2;color:#1e1e2e;}
+.hdr{background:#fff;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid #e8e2da;box-shadow:0 1px 8px rgba(0,0,0,.06);}
+.hdr-left{display:flex;align-items:center;gap:12px;}
+.hdr-logo{width:38px;height:38px;flex-shrink:0;}
+.hdr-titles{display:flex;flex-direction:column;gap:1px;}
+.hdr-name{font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:.04em;color:#C94A3D;}
+.hdr-series{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9a8a7e;}
+.hdr-refrain{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#9a8a7e;}
+.wnav{background:#fff;border-bottom:1px solid #e8e2da;padding:0 22px;overflow-x:auto;display:flex;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
 .wnav::-webkit-scrollbar{display:none;}
-.wtab{flex-shrink:0;padding:14px 16px;font-size:12px;font-weight:400;letter-spacing:.08em;color:#5a5a7a;cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;font-family:'Jost',sans-serif;}
-.wtab:hover{color:#b8a98a;}
-.wtab.on{color:#f5f0e8;border-bottom-color:#b8a98a;}
-.hero{padding:34px 22px 26px;background:#1a1a2e;animation:fi .3s ease;}
-.wklbl{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#b8a98a;font-weight:300;margin-bottom:10px;}
-.htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,8vw,50px);font-weight:500;color:#f5f0e8;line-height:1.05;margin-bottom:10px;}
-.hpass{font-size:11px;letter-spacing:.15em;color:#b8a98a;text-transform:uppercase;font-weight:300;}
-/* PRE-WATCH */
-.pre-watch{background:#1a1a2e;padding:0 22px 22px;}
-.pre-card{max-width:800px;margin:0 auto;border:1px solid #2e2e4e;border-radius:6px;overflow:hidden;background:#13132a;}
-.pre-tog{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:transparent;border:none;cursor:pointer;transition:background .2s;gap:16px;}
-.pre-tog:hover{background:rgba(255,255,255,.04);}
+.wtab{flex-shrink:0;padding:12px 16px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#b0a090;cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;font-family:'Jost',sans-serif;}
+.wtab:hover{color:#C94A3D;}
+.wtab.on{color:#C94A3D;border-bottom-color:#C94A3D;}
+.hero{padding:36px 22px 28px;background:linear-gradient(135deg,#1e1e2e 0%,#2e1a18 100%);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,74,61,.18) 0%,transparent 65%);pointer-events:none;}
+.wklbl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C94A3D;font-weight:400;margin-bottom:10px;position:relative;}
+.htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,8vw,52px);font-weight:500;color:#f5f0e8;line-height:1.05;margin-bottom:10px;position:relative;}
+.hpass{font-size:11px;letter-spacing:.18em;color:rgba(245,240,232,.45);text-transform:uppercase;font-weight:300;position:relative;}
+.pre-watch{background:#1e1e2e;padding:0 22px 20px;}
+.pre-card{max-width:800px;margin:0 auto;border:1px solid rgba(201,74,61,.25);border-radius:6px;overflow:hidden;background:rgba(201,74,61,.07);}
+.pre-tog{width:100%;display:flex;align-items:center;justify-content:space-between;padding:15px 20px;background:transparent;border:none;cursor:pointer;transition:background .2s;gap:16px;}
+.pre-tog:hover{background:rgba(201,74,61,.08);}
 .pre-tog-left{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
-.pre-step{font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:#b8a98a;font-family:'Jost',sans-serif;}
+.pre-step{font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:#C94A3D;font-family:'Jost',sans-serif;}
 .pre-tog-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:#f5f0e8;}
-.pre-arrow{color:#5a5a7a;transition:transform .25s ease;flex-shrink:0;}
-.pre-arrow.open{transform:rotate(180deg);color:#b8a98a;}
-.pre-body{padding:0 20px 20px;animation:fi .2s ease;border-top:1px solid #2a2a4a;}
-.pre-esv{font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#5a5a7a;margin:14px 0 12px;font-family:'Jost',sans-serif;}
+.pre-arrow{color:#C94A3D;transition:transform .25s ease;flex-shrink:0;opacity:.7;}
+.pre-arrow.open{transform:rotate(180deg);opacity:1;}
+.pre-body{padding:0 20px 20px;border-top:1px solid rgba(201,74,61,.2);}
+.pre-esv{font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.35);margin:14px 0 12px;font-family:'Jost',sans-serif;}
 .pre-verses{display:flex;flex-direction:column;}
-.pre-verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid #1e1e38;}
+.pre-verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
 .pre-verse:last-child{border-bottom:none;}
-.pre-vnum{font-size:10px;font-weight:500;color:#4a4a6a;min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;font-family:'Jost',sans-serif;}
-.pre-vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.7;color:#c8bfb0;}
-.pre-credit{font-size:10px;color:#3a3a5a;font-family:'Jost',sans-serif;font-weight:300;margin-top:14px;line-height:1.5;}
-/* VIDEO */
-.vsec{background:#0f0f1e;padding:22px;}
-.vembed-wrap{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;}
+.pre-vnum{font-size:10px;font-weight:500;color:rgba(201,74,61,.6);min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;font-family:'Jost',sans-serif;}
+.pre-vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.7;color:rgba(245,240,232,.8);}
+.pre-credit{font-size:10px;color:rgba(245,240,232,.25);font-family:'Jost',sans-serif;font-weight:300;margin-top:14px;line-height:1.5;}
+.vsec{background:#111118;padding:20px 22px;}
+.vembed-wrap{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.4);}
 .vembed-wrap iframe{width:100%;height:100%;border:none;display:block;}
-.vcard-soon{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(ellipse at 60% 40%,#2a2a50 0%,#0f0f1e 70%);border:1px solid #2e2e4e;}
-.vcard-soon-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#b8a98a;font-weight:300;}
+.vcard-soon{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1e1e2e,#2e1a18);border:1px solid rgba(201,74,61,.2);}
+.vcard-soon-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#C94A3D;font-weight:300;}
 .vcard-soon-title{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,23px);font-weight:500;color:#f5f0e8;}
-.vcard-soon-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,169,138,.5);font-weight:300;margin-top:4px;}
-/* SECTIONS */
+.vcard-soon-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,74,61,.45);font-weight:300;margin-top:4px;}
 .sections{padding:24px 22px 48px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
-.sec-inst{background:#ede8dd;border-radius:4px;padding:13px 17px;margin-bottom:6px;font-size:13px;color:#6b5e4e;line-height:1.65;font-weight:300;}
-/* expandable section card */
-.sec-card{background:#fff;border:1px solid #e0d9ce;border-radius:6px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
-.sec-card:hover{border-color:#b0a090;}
-.sec-card.open{border-color:#1a1a2e;box-shadow:0 2px 16px rgba(26,26,46,.09);}
-.sec-card.open:hover{border-color:#1a1a2e;}
+.sec-inst{background:#fff;border:1px solid #e8e2da;border-radius:6px;padding:13px 17px;margin-bottom:4px;font-size:13px;color:#6b6b7a;line-height:1.65;font-weight:300;}
+.sec-card{background:#fff;border:1px solid #e8e2da;border-radius:6px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.sec-card:hover{border-color:#C94A3D;box-shadow:0 2px 12px rgba(201,74,61,.08);}
+.sec-card.open{border-color:#C94A3D;box-shadow:0 2px 16px rgba(201,74,61,.12);}
 .sec-head{width:100%;display:flex;align-items:center;gap:14px;padding:15px 18px;background:transparent;border:none;cursor:pointer;text-align:left;}
-.sec-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;color:#c8b898;flex-shrink:0;min-width:18px;}
-.sec-card.open .sec-num{color:#9a8070;}
-.sec-info{flex:1;display:flex;flex-direction:column;gap:3px;}
-.sec-heading{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:#2a2040;line-height:1.3;}
-.sec-card.open .sec-heading{color:#1a1a2e;}
+.sec-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;color:#d4b8b4;flex-shrink:0;min-width:18px;}
+.sec-card.open .sec-num{color:#C94A3D;}
+.sec-info{flex:1;display:flex;flex-direction:column;gap:4px;}
+.sec-heading{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:#2a1e1e;line-height:1.3;}
+.sec-card.open .sec-heading{color:#1e1e2e;}
 .sec-tags{display:flex;gap:5px;margin-top:3px;flex-wrap:wrap;}
-.sec-tag{font-family:'Jost',sans-serif;font-size:9px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:#a89880;background:#f5f0e8;border:1px solid #e0d9ce;border-radius:2px;padding:2px 6px;}
-.sec-arrow{color:#c8bba8;transition:transform .25s ease;flex-shrink:0;}
-.sec-card.open .sec-arrow{transform:rotate(180deg);color:#8a7a65;}
-/* outline marker — no content, non-expandable */
-.sec-marker{background:#faf7f2;border:1px solid #e8e1d6;border-radius:6px;padding:12px 18px;display:flex;align-items:center;gap:14px;}
-.sec-marker-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;color:#d4c9b4;flex-shrink:0;min-width:18px;}
-.sec-marker-heading{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#b0a492;line-height:1.3;font-style:italic;}
-/* section body */
-.sec-body{border-top:1px solid #f0ebe2;animation:fi .2s ease;}
+.sec-tag{font-family:'Jost',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#C94A3D;background:#FEF0EE;border:1px solid rgba(201,74,61,.2);border-radius:2px;padding:2px 7px;}
+.sec-arrow{color:#d4b8b4;transition:transform .25s ease;flex-shrink:0;}
+.sec-card.open .sec-arrow{transform:rotate(180deg);color:#C94A3D;}
+.sec-marker{background:#faf8f5;border:1px solid #ede8e1;border-radius:6px;padding:13px 18px;display:flex;align-items:center;gap:14px;}
+.sec-marker-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;color:#d4c8c4;flex-shrink:0;min-width:18px;}
+.sec-marker-heading{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#b8a8a4;line-height:1.3;font-style:italic;}
+.sec-body{border-top:1px solid #f0ebe4;}
 .sec-passage{padding:18px 18px 0;}
-.sec-esv-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#b8a98a;margin-bottom:12px;}
+.sec-esv-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#b8a8a4;margin-bottom:12px;}
 .verses{display:flex;flex-direction:column;}
-.verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid #f0ebe2;}
+.verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid #f5f0ea;}
 .verse:last-child{border-bottom:none;}
-.vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#c8b898;min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;}
-.vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.65;color:#2a2040;}
-.esv-credit{font-size:10px;color:#c8b898;font-family:'Jost',sans-serif;font-weight:300;margin-top:10px;line-height:1.5;}
-.sec-div{margin:16px 18px 0;border:none;border-top:1px solid #ede8dd;}
+.vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#C94A3D;opacity:.5;min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;}
+.vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.65;color:#2a1e1e;}
+.esv-credit{font-size:10px;color:#c8b8b4;font-family:'Jost',sans-serif;font-weight:300;margin-top:10px;line-height:1.5;}
+.sec-div{margin:16px 18px 0;border:none;border-top:1px solid #f0ebe4;}
 .sec-questions{padding:16px 18px 18px;}
-.sec-q-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:#8a7a65;margin-bottom:10px;}
+.sec-q-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:#9a8a7e;margin-bottom:10px;}
 .qlist{display:flex;flex-direction:column;gap:8px;}
-.qcard{background:#f9f6f0;border:1px solid #e8e0d4;border-radius:4px;padding:14px 16px;cursor:pointer;transition:all .2s;position:relative;}
-.qcard:hover{border-color:#a89880;background:#f5f0e8;}
-.qcard.on{border-color:#1a1a2e;background:#f0ece4;box-shadow:0 1px 8px rgba(26,26,46,.08);}
-.qnum{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#b8a98a;margin-bottom:7px;}
-.qcard.on .qnum{color:#8a7060;}
-.qtxt{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.55;color:#2a2040;}
-.qcard.on .qtxt{color:#1a1a2e;font-weight:500;}
-.qdot{position:absolute;top:13px;right:14px;width:6px;height:6px;border-radius:50%;background:#1a1a2e;}
-/* FOOTER */
-.ftr{background:#1a1a2e;padding:30px 22px;text-align:center;}
-.fr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#b8a98a;line-height:1.5;}
-.fs{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#3a3a5a;margin-top:13px;}
+.qcard{background:#faf8f5;border:1px solid #e8e2da;border-radius:4px;padding:14px 16px;cursor:pointer;transition:all .2s;position:relative;}
+.qcard:hover{border-color:#C94A3D;background:#FEF0EE;}
+.qcard.on{border-color:#C94A3D;background:#FEF0EE;box-shadow:0 1px 10px rgba(201,74,61,.1);}
+.qnum{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#d4b8b4;margin-bottom:7px;}
+.qcard.on .qnum{color:#C94A3D;}
+.qtxt{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.55;color:#2a1e1e;}
+.qcard.on .qtxt{color:#1e1e2e;font-weight:500;}
+.qdot{position:absolute;top:13px;right:14px;width:6px;height:6px;border-radius:50%;background:#C94A3D;}
+.ftr{background:#C94A3D;padding:28px 22px;text-align:center;}
+.ftr-mark{margin:0 auto 16px;display:block;}
+.fr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(255,255,255,.9);line-height:1.5;}
+.fs{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:12px;}
 @keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.hdr-r{display:none;}.hero{padding:26px 18px 20px;}.pre-watch{padding:0 16px 16px;}.vsec{padding:16px;}.sections{padding:20px 16px 40px;gap:6px;}}
+@media(max-width:480px){.hdr-refrain{display:none;}.hero{padding:26px 18px 20px;}.pre-watch{padding:0 16px 16px;}.vsec{padding:14px 16px;}.sections{padding:20px 16px 40px;gap:6px;}}
 </style>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <div id="root"></div>
@@ -110,9 +108,6 @@ body{background:#f5f0e8;font-family:'Jost',sans-serif;min-height:100vh;}
 const { useState } = React;
 const SERIES = "Colossians: Christ at the Centre";
 const REFRAIN = "Have you met Him? Are you living in Him?";
-
-// verses: array or null  |  questions: array or null
-// If both null, section renders as a non-expandable outline marker
 
 const sessions = [
   {
@@ -256,7 +251,23 @@ const sessions = [
     ],
   },
   {
-    week: 7, label: "Week 7", title: "Living in What We Already Have", passage: "Colossians 3:1\u201311", videoId: "p-ZunqENjH4",
+    week: 8, label: "Week 8", title: "Clothed in Christ", passage: "Colossians 3:12\u201317", videoId: "FTewikxh40k",
+    fullPassage: [
+      { n: 12, t: "Put on then, as God's chosen ones, holy and beloved, compassionate hearts, kindness, humility, meekness, and patience," },
+      { n: 13, t: "bearing with one another and, if one has a complaint against another, forgiving each other; as the Lord has forgiven you, so you also must forgive." },
+      { n: 14, t: "And above all these put on love, which binds everything together in perfect harmony." },
+      { n: 15, t: "And let the peace of Christ rule in your hearts, to which indeed you were called in one body. And be thankful." },
+      { n: 16, t: "Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God." },
+      { n: 17, t: "And whatever you do, in word or deed, do everything in the name of the Lord Jesus, giving thanks to God the Father through him." },
+    ],
+    sections: [
+      { heading: "Introduction", verses: null, questions: null },
+      { heading: "Who we are before what we do (3:12)", verses: [{ n: 12, t: "Put on then, as God's chosen ones, holy and beloved, compassionate hearts, kindness, humility, meekness, and patience," }], questions: ["Paul tells the Colossians they are chosen, holy and beloved before he tells them how to live. Does that order feel true in practice, or do we tend to live as though the identity depends on the conduct?", "Of the five virtues Paul lists, which do you find hardest to receive from others, and which hardest to offer? What might that reveal?", "Paul uses the clothing picture: the character of Christ is something to be put on. Is there a virtue on this list that feels like it doesn't quite fit yet, where you are still reaching for something older?"] },
+      { heading: "What the new life looks like (3:12\u201314)", verses: [{ n: 13, t: "bearing with one another and, if one has a complaint against another, forgiving each other; as the Lord has forgiven you, so you also must forgive." }, { n: 14, t: "And above all these put on love, which binds everything together in perfect harmony." }], questions: ["Paul's word for forgiveness here means to give freely as an act of grace, not just to cancel a debt. Is there someone you have cancelled the debt for but not yet actively graced? What would that look like?", "Love is described as the bond that holds all the other virtues together and brings them to completeness. What happens to a community where the other virtues are present but love is thin?", "The peace of Christ is called to rule in the community's shared life, including how we handle disagreement. Can you think of a situation where the prize has been winning the argument rather than reaching peace in Christ?"] },
+      { heading: "The air the new life breathes (3:15\u201317)", verses: [{ n: 15, t: "And let the peace of Christ rule in your hearts, to which indeed you were called in one body. And be thankful." }, { n: 16, t: "Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God." }, { n: 17, t: "And whatever you do, in word or deed, do everything in the name of the Lord Jesus, giving thanks to God the Father through him." }], questions: ["Paul says the word of Christ should dwell among us richly, not visit occasionally. When was the last time you found yourself talking with a brother or sister about God outside of a meeting? What would it take for that to become an ordinary conversation?", "Thanksgiving appears three times in three verses. It is also counter-cultural: it says what we have is enough. Where in your life is that hardest to believe, and what would it mean to bring that specific thing under gratitude?", "Verse 17: whatever you do in word or deed, do everything in the name of the Lord Jesus. Is there an area of your life where that name has not yet fully reached?"] },
+    ],
+  },
+ title: "Living in What We Already Have", passage: "Colossians 3:1\u201311", videoId: "p-ZunqENjH4",
     fullPassage: [
       { n: 1, t: "If then you have been raised with Christ, seek the things that are above, where Christ is, seated at the right hand of God." },
       { n: 2, t: "Set your minds on things that are above, not on things that are on earth." },
@@ -278,6 +289,27 @@ const sessions = [
     ],
   },
 ];
+
+function HopeLogo({ size, invert }) {
+  const c = invert ? "rgba(255,255,255,0.9)" : "#C94A3D";
+  const lines = Array.from({ length: 24 }, (_, i) => {
+    const angle = (i / 24) * 360;
+    const r = angle * Math.PI / 180;
+    const x1 = 50 + Math.cos(r) * 18;
+    const y1 = 50 + Math.sin(r) * 18;
+    const x2 = 50 + Math.cos(r) * 46;
+    const y2 = 50 + Math.sin(r) * 46;
+    return { x1, y1, x2, y2 };
+  });
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      {lines.map((l, i) => (
+        <line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} stroke={c} strokeWidth="1.2" strokeOpacity="0.5" />
+      ))}
+      <text x="50" y="56" textAnchor="middle" fontFamily="Jost, sans-serif" fontWeight="700" fontSize="22" fill={c} letterSpacing="2">HOPE</text>
+    </svg>
+  );
+}
 
 function PreWatch({ passage, verses }) {
   const [open, setOpen] = useState(false);
@@ -346,7 +378,6 @@ function SectionCard({ section, index }) {
   const hasQuestions = section.questions && section.questions.length > 0;
   const hasContent = hasVerses || hasQuestions;
 
-  // Sections with no content render as non-expandable outline markers
   if (!hasContent) {
     return (
       <div className="sec-marker">
@@ -409,33 +440,45 @@ function SectionCard({ section, index }) {
 }
 
 function App() {
-  const [wi, setWi] = useState(sessions.length - 1); // defaults to latest week
+  const [wi, setWi] = useState(sessions.length - 1);
   const s = sessions[wi];
   return (
     <div className="app">
       <header className="hdr">
-        <span className="hdr-s">{SERIES}</span>
-        <span className="hdr-r">{REFRAIN}</span>
+        <div className="hdr-left">
+          <HopeLogo size={38} invert={false} />
+          <div className="hdr-titles">
+            <span className="hdr-name">Hope Church</span>
+            <span className="hdr-series">{SERIES}</span>
+          </div>
+        </div>
+        <span className="hdr-refrain">{REFRAIN}</span>
       </header>
+
       <nav className="wnav">
         {sessions.map((x, i) => (
           <button key={i} className={`wtab${wi === i ? " on" : ""}`} onClick={() => setWi(i)}>{x.label}</button>
         ))}
       </nav>
+
       <div className="hero" key={wi}>
         <div className="wklbl">{s.week === 0 ? "Series Introduction" : `Week ${s.week}`}</div>
         <h1 className="htitle">{s.title}</h1>
         <div className="hpass">{s.passage}</div>
       </div>
+
       <PreWatch key={`pre-${wi}`} passage={s.passage} verses={s.fullPassage} />
       <VideoCard session={s} />
+
       <div className="sections" key={`s${wi}`}>
         <div className="sec-inst">Work through the sections below as you watch. Expandable cards contain the passage and discussion questions for that section. Italic sections are teaching — no discussion break.</div>
         {s.sections.map((sec, i) => (
           <SectionCard key={`${wi}-${i}`} section={sec} index={i} />
         ))}
       </div>
+
       <footer className="ftr">
+        <HopeLogo size={44} invert={true} />
         <div className="fr">{REFRAIN}</div>
         <div className="fs">{SERIES}</div>
       </footer>
@@ -443,7 +486,7 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
