@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Colossians: Christ at the Centre — Hope</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -18,9 +18,9 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .hdr-left{display:flex;align-items:center;gap:12px;}
 .hdr-logo{width:42px;height:42px;object-fit:contain;flex-shrink:0;}
 .hdr-titles{display:flex;flex-direction:column;gap:1px;}
-.hdr-name{font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:.04em;color:#C94A3D;}
+.hdr-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:.04em;color:#C94A3D;}
 .hdr-series{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9a8a7e;}
-.hdr-refrain{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#9a8a7e;}
+.hdr-refrain{font-family:'Jost',sans-serif;font-style:italic;font-weight:300;font-size:13px;color:#9a8a7e;}
 .wnav{background:#fff;border-bottom:1px solid #e8e2da;padding:0 22px;overflow-x:auto;display:flex;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
 .wnav::-webkit-scrollbar{display:none;}
 .wtab{flex-shrink:0;padding:12px 16px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#b0a090;cursor:pointer;border:none;background:transparent;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;font-family:'Jost',sans-serif;}
@@ -29,7 +29,7 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .hero{padding:36px 22px 28px;background:linear-gradient(135deg,#1e1e2e 0%,#2e1a18 100%);position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,74,61,.18) 0%,transparent 65%);pointer-events:none;}
 .wklbl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#C94A3D;font-weight:400;margin-bottom:10px;position:relative;}
-.htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,8vw,52px);font-weight:500;color:#f5f0e8;line-height:1.05;margin-bottom:10px;position:relative;}
+.htitle{font-family:'Montserrat',sans-serif;font-size:clamp(24px,7vw,42px);font-weight:700;color:#f5f0e8;line-height:1.05;margin-bottom:10px;position:relative;}
 .hpass{font-size:11px;letter-spacing:.18em;color:rgba(245,240,232,.45);text-transform:uppercase;font-weight:300;position:relative;}
 .pre-watch{background:#1e1e2e;padding:0 22px 20px;}
 .pre-card{max-width:800px;margin:0 auto;border:1px solid rgba(201,74,61,.25);border-radius:6px;overflow:hidden;background:rgba(201,74,61,.07);}
@@ -37,7 +37,7 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .pre-tog:hover{background:rgba(201,74,61,.08);}
 .pre-tog-left{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
 .pre-step{font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:#C94A3D;font-family:'Jost',sans-serif;}
-.pre-tog-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:#f5f0e8;}
+.pre-tog-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;color:#f5f0e8;letter-spacing:.02em;}
 .pre-arrow{color:#C94A3D;transition:transform .25s ease;flex-shrink:0;opacity:.7;}
 .pre-arrow.open{transform:rotate(180deg);opacity:1;}
 .pre-body{padding:0 20px 20px;border-top:1px solid rgba(201,74,61,.2);}
@@ -46,14 +46,14 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .pre-verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);}
 .pre-verse:last-child{border-bottom:none;}
 .pre-vnum{font-size:10px;font-weight:500;color:rgba(201,74,61,.6);min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;font-family:'Jost',sans-serif;}
-.pre-vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.7;color:rgba(245,240,232,.8);}
+.pre-vtxt{font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.7;color:rgba(245,240,232,.8);}
 .pre-credit{font-size:10px;color:rgba(245,240,232,.25);font-family:'Jost',sans-serif;font-weight:300;margin-top:14px;line-height:1.5;}
 .vsec{background:#111118;padding:20px 22px;}
 .vembed-wrap{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:6px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.4);}
 .vembed-wrap iframe{width:100%;height:100%;border:none;display:block;}
 .vcard-soon{width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1e1e2e,#2e1a18);border:1px solid rgba(201,74,61,.2);}
 .vcard-soon-tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#C94A3D;font-weight:300;}
-.vcard-soon-title{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4vw,23px);font-weight:500;color:#f5f0e8;}
+.vcard-soon-title{font-family:'Montserrat',sans-serif;font-size:clamp(15px,4vw,23px);font-weight:500;color:#f5f0e8;}
 .vcard-soon-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(201,74,61,.45);font-weight:300;margin-top:4px;}
 .sections{padding:24px 22px 48px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
 .sec-inst{background:#fff;border:1px solid #e8e2da;border-radius:6px;padding:13px 17px;margin-bottom:4px;font-size:13px;color:#6b6b7a;line-height:1.65;font-weight:300;}
@@ -64,7 +64,7 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .sec-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;color:#d4b8b4;flex-shrink:0;min-width:18px;}
 .sec-card.open .sec-num{color:#C94A3D;}
 .sec-info{flex:1;display:flex;flex-direction:column;gap:4px;}
-.sec-heading{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:#2a1e1e;line-height:1.3;}
+.sec-heading{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;color:#2a1e1e;line-height:1.3;}
 .sec-card.open .sec-heading{color:#1e1e2e;}
 .sec-tags{display:flex;gap:5px;margin-top:3px;flex-wrap:wrap;}
 .sec-tag{font-family:'Jost',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#C94A3D;background:#FEF0EE;border:1px solid rgba(201,74,61,.2);border-radius:2px;padding:2px 7px;}
@@ -72,7 +72,7 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .sec-card.open .sec-arrow{transform:rotate(180deg);color:#C94A3D;}
 .sec-marker{background:#faf8f5;border:1px solid #ede8e1;border-radius:6px;padding:13px 18px;display:flex;align-items:center;gap:14px;}
 .sec-marker-num{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;color:#d4c8c4;flex-shrink:0;min-width:18px;}
-.sec-marker-heading{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#b8a8a4;line-height:1.3;font-style:italic;}
+.sec-marker-heading{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:400;color:#b8a8a4;line-height:1.3;}
 .sec-body{border-top:1px solid #f0ebe4;}
 .sec-passage{padding:18px 18px 0;}
 .sec-esv-label{font-family:'Jost',sans-serif;font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:#b8a8a4;margin-bottom:12px;}
@@ -80,7 +80,7 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .verse{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid #f5f0ea;}
 .verse:last-child{border-bottom:none;}
 .vnum{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;color:#C94A3D;opacity:.5;min-width:26px;padding-top:3px;letter-spacing:.05em;flex-shrink:0;}
-.vtxt{font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.65;color:#2a1e1e;}
+.vtxt{font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.65;color:#2a1e1e;}
 .esv-credit{font-size:10px;color:#c8b8b4;font-family:'Jost',sans-serif;font-weight:300;margin-top:10px;line-height:1.5;}
 .sec-div{margin:16px 18px 0;border:none;border-top:1px solid #f0ebe4;}
 .sec-questions{padding:16px 18px 18px;}
@@ -91,12 +91,12 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 .qcard.on{border-color:#C94A3D;background:#FEF0EE;box-shadow:0 1px 10px rgba(201,74,61,.1);}
 .qnum{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#d4b8b4;margin-bottom:7px;}
 .qcard.on .qnum{color:#C94A3D;}
-.qtxt{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.55;color:#2a1e1e;}
+.qtxt{font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.55;color:#2a1e1e;}
 .qcard.on .qtxt{color:#1e1e2e;font-weight:500;}
 .qdot{position:absolute;top:13px;right:14px;width:6px;height:6px;border-radius:50%;background:#C94A3D;}
 .ftr{background:#C94A3D;padding:28px 22px;text-align:center;}
 .ftr-logo{width:52px;height:52px;object-fit:contain;margin:0 auto 16px;display:block;filter:brightness(0) invert(1);}
-.fr{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:rgba(255,255,255,.9);line-height:1.5;}
+.fr{font-family:'Jost',sans-serif;font-style:italic;font-size:18px;font-weight:300;color:rgba(255,255,255,.9);line-height:1.5;}
 .fs{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:12px;}
 @keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:480px){.hdr-refrain{display:none;}.hero{padding:26px 18px 20px;}.pre-watch{padding:0 16px 16px;}.vsec{padding:14px 16px;}.sections{padding:20px 16px 40px;gap:6px;}}
