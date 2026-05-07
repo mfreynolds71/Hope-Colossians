@@ -103,6 +103,24 @@ body{background:#f7f5f2;font-family:'Jost',sans-serif;min-height:100vh;}
 </head>
 <body>
 <div id="root"></div>
+<script>
+  window.onerror = function (message, source, lineno, colno, error) {
+    document.body.innerHTML =
+      '<pre style="white-space:pre-wrap;padding:20px;font-family:monospace;color:#900;background:#fff;">' +
+      'JavaScript error:\n\n' +
+      message + '\n\nLine: ' + lineno + '\nColumn: ' + colno +
+      (error && error.stack ? '\n\n' + error.stack : '') +
+      '</pre>';
+  };
+
+  window.addEventListener('unhandledrejection', function (event) {
+    document.body.innerHTML =
+      '<pre style="white-space:pre-wrap;padding:20px;font-family:monospace;color:#900;background:#fff;">' +
+      'Unhandled promise rejection:\n\n' +
+      event.reason +
+      '</pre>';
+  });
+</script>
 <script type="text/babel">
 const { useState } = React;
 const SERIES = "Colossians: Christ at the Centre";
