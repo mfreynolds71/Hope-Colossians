@@ -1359,7 +1359,7 @@ function PreWatch({
     className: "pre-body"
   }, /*#__PURE__*/React.createElement("div", {
     className: "pre-esv"
-  }, "ESV \\u00b7 English Standard Version"), /*#__PURE__*/React.createElement("div", {
+  }, "ESV · English Standard Version"), /*#__PURE__*/React.createElement("div", {
     className: "pre-verses"
   }, verses.map((v, i) => /*#__PURE__*/React.createElement("div", {
     className: "pre-verse",
@@ -1370,7 +1370,7 @@ function PreWatch({
     className: "pre-vtxt"
   }, v.t)))), /*#__PURE__*/React.createElement("div", {
     className: "pre-credit"
-  }, "Scripture from the ESV\\u00ae Bible \\u00a9 2001 Crossway. Used by permission."))));
+  }, "Scripture from the ESV® Bible © 2001 Crossway. Used by permission."))));
 }
 function VideoCard({
   session
@@ -1382,7 +1382,7 @@ function VideoCard({
       className: "vcard-soon"
     }, /*#__PURE__*/React.createElement("div", {
       className: "vcard-soon-tag"
-    }, session.week === 0 ? "Introduction" : `Week ${session.week}`, " \\u00b7 ", session.passage), /*#__PURE__*/React.createElement("div", {
+    }, session.week === 0 ? "Introduction" : `Week ${session.week}`, " · ", session.passage), /*#__PURE__*/React.createElement("div", {
       className: "vcard-soon-title"
     }, session.title), /*#__PURE__*/React.createElement("div", {
       className: "vcard-soon-label"
@@ -1456,7 +1456,7 @@ function SectionCard({
     className: "sec-passage"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sec-esv-label"
-  }, "ESV \\u00b7 English Standard Version"), /*#__PURE__*/React.createElement("div", {
+  }, "ESV · English Standard Version"), /*#__PURE__*/React.createElement("div", {
     className: "verses"
   }, section.verses.map((v, i) => /*#__PURE__*/React.createElement("div", {
     className: "verse",
@@ -1467,7 +1467,7 @@ function SectionCard({
     className: "vtxt"
   }, v.t)))), /*#__PURE__*/React.createElement("div", {
     className: "esv-credit"
-  }, "Scripture from the ESV\\u00ae Bible \\u00a9 2001 Crossway. Used by permission.")), hasVerses && hasQuestions && /*#__PURE__*/React.createElement("hr", {
+  }, "Scripture from the ESV® Bible © 2001 Crossway. Used by permission.")), hasVerses && hasQuestions && /*#__PURE__*/React.createElement("hr", {
     className: "sec-div"
   }), hasQuestions && /*#__PURE__*/React.createElement("div", {
     className: "sec-questions"
@@ -1623,7 +1623,7 @@ function SeriesView({
     key: `s${wi}`
   }, /*#__PURE__*/React.createElement("div", {
     className: "sec-inst"
-  }, "Work through the sections below as you watch. Expandable cards contain the passage and discussion questions for that section. Italic sections are teaching \\u2014 no discussion break."), s.sections.map((sec, i) => /*#__PURE__*/React.createElement(SectionCard, {
+  }, "Work through the sections below as you watch. Expandable cards contain the passage and discussion questions for that section. Italic sections are teaching — no discussion break."), s.sections.map((sec, i) => /*#__PURE__*/React.createElement(SectionCard, {
     key: `${wi}-${i}`,
     section: sec,
     index: i
