@@ -1261,6 +1261,7 @@ const philemonSessions = [{
   passage: "Introduction",
   videoId: "GbFj80870HQ",
   fullPassage: null,
+  description: "Euan sets the scene for Paul, Philemon, Onesimus and the Colossians church as we prepare to kick off our new series looking at Paul's letter to Philemon together.",
   sections: []
 }];
 
@@ -1595,7 +1596,7 @@ function SeriesView({
     key: `s${wi}`
   }, /*#__PURE__*/React.createElement("div", {
     className: "sec-inst"
-  }, "Work through the sections below as you watch. Expandable cards contain the passage and discussion questions for that section. Italic sections are teaching — no discussion break."), s.sections.map((sec, i) => /*#__PURE__*/React.createElement(SectionCard, {
+  }, s.description || "Work through the sections below as you watch. Expandable cards contain the passage and discussion questions for that section. Italic sections are teaching — no discussion break."), s.sections.map((sec, i) => /*#__PURE__*/React.createElement(SectionCard, {
     key: `${wi}-${i}`,
     section: sec,
     index: i
